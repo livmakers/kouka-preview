@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="same-origin">
+<title>社内ナレッジ｜考課管理</title>
+<link rel="stylesheet" href="assets/app.css?v=6">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/preview.css"><script src="assets/preview.js" defer></script>
+<script src="assets/app.js?v=6" defer></script>
+</head>
+<body class="app"><div class="preview-bar" role="note"><a href="index.html">← 確認ボード</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+<header class="top">
+  <a class="brand" href="staff-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="staff-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
+    <a href="staff-sheet-draft.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
+              <a href="hr-list.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
+      <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
+        <a href="admin.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
+  </nav>
+  <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">山崎 陸さん</span>
+    <button type="submit" class="btn ghost sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5.5A1.5 1.5 0 0 0 12.5 4h-6A1.5 1.5 0 0 0 5 5.5v13A1.5 1.5 0 0 0 6.5 20h6a1.5 1.5 0 0 0 1.5-1.5V17M10 12h10M17 9l3 3-3 3"/></svg><span>ログアウト</span></button>
+  </form>
+</header>
+<main class="main" id="main">
+<p class="crumb"><a href="admin.html">管理</a> › 社内ナレッジ</p>
+<section class="card">
+  <h1 class="h2">ナレッジを追加</h1>
+  <p class="small muted">相談ボックスで、相談の種類とキーワードが合うものから最大3件を表示します。文面は「こうすればできる」の提案型でお書きください。</p>
+  <form method="post" class="stack"><input type="hidden" name="csrf" value=""><input type="hidden" name="id" value="0">
+    <div class="form-grid">
+      <div class="fld"><label for="k-cat">種類</label><select id="k-cat" name="category"><option value="goal" selected>目標の立て方</option><option value="number">数値の置き方</option><option value="plan">行動計画</option><option value="tips">達成のコツ</option><option value="time">時間の使い方</option></select></div>
+      <div class="fld"><label for="k-kw">キーワード<small>カンマ区切り</small></label><input id="k-kw" name="keywords" value="" maxlength="400"></div>
+    </div>
+    <div class="fld"><label for="k-title">見出し</label><input id="k-title" name="title" value="" maxlength="100" required></div>
+    <div class="fld"><label for="k-body">本文</label><textarea id="k-body" name="body" rows="5" maxlength="2000" required></textarea></div>
+    <div class="row"><button class="btn primary">保存する</button></div>
+  </form>
+</section>
+<section class="card">
+  <h2 class="h3">登録済み（20件）</h2>
+  <ul class="list">
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">目標の立て方</span> <b>「1年後の自分」から逆算してみましょう</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="101"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">目標づくりで迷うのは、真剣に考えている証拠です。まず「半年後、どんな場面で、何が今より上手にできていたらうれしいか」を一つ思い浮かべてみましょう。例：「新人に売場づくりを一人で教えられる」。その姿を一文にすると、成長目標の形になります。</p><p class="small muted">キーワード：分からない,わからない,思いつか,決められ,何を目指,目標</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">目標の立て方</span> <b>上長に「期待していること」を一つだけ聞く</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="102"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">自分だけで決めきれないときは、面談の前に上長へ「今期いちばん期待していることを一つ教えてください」と聞いてみると方向が定まります。期待と自分のやりたいことが重なるところが、伸びやすい目標です。</p><p class="small muted">キーワード：上長,期待,役割,求められ</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">目標の立て方</span> <b>大きな目標は「途中の目印」に分ける</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="103"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">高い目標に挑むのはすばらしいことです。不安なときは、期末のゴールを3か月目・6か月目の中間目標に分けてみましょう。途中の目印があると、届いている実感を持ちながら進められます。</p><p class="small muted">キーワード：大きすぎ,高すぎ,自信,不安,難し</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">目標の立て方</span> <b>「できるようになること」を動詞で書く</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="104"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">成長目標は「〇〇を理解する」より「〇〇を一人で△△できる」のように、行動の動詞で書くと判定しやすくなります。例：「発注の仕組みを理解する」→「担当棚の発注を一人で毎日できる」。</p><p class="small muted">キーワード：成長,スキル,資格,勉強,覚え</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">数値の置き方</span> <b>前期実績＋「少し背伸び」の幅で置く</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="105"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">数値目標は、前期実績を出発点にすると置きやすくなります。役職ごとの標準的な伸び幅（一般社員なら前期比＋3〜8%程度）を目安に、「届きそうで、少しだけ手を伸ばす」数字を選んでみましょう。</p><p class="small muted">キーワード：数値,数字,目標値,どれくらい,何件,%,％</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">数値の置き方</span> <b>前期の数字がないときは「最初の1か月」を測る</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="106"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">新しい業務で前期の数字がないときは、最初の1か月の実績を測って、それを基準に目標を置き直す方法があります。いったん暫定の数字で始め、面談で見直せば大丈夫です。</p><p class="small muted">キーワード：前期,実績,ない,初めて,新しい</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">数値の置き方</span> <b>数えられる「単位」を決める</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="107"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">数字にしにくい仕事も、「件」「回」「分」「%」のどれかで数えられることが多いです。例：「接客がうまくなる」→「お客様アンケートの満足回答率」「1日の声かけ件数」。単位が決まると、目標値も決めやすくなります。</p><p class="small muted">キーワード：測れ,単位,基準,指標</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">数値の置き方</span> <b>減らしたい数字は「↓」で目標にする</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="108"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">クレームやロスのように少ないほど良い数字は、方向を「↓（低いほど良い）」にすると、達成率が自動で正しく計算されます。前期の件数から「何件まで減らすか」を目標値に入れてみましょう。</p><p class="small muted">キーワード：低い,減らす,クレーム,ミス,遅延,ロス</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">行動計画</span> <b>「毎週◯曜日に◯◯する」まで具体的に</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="109"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">行動計画は、カレンダーに書き込める形にすると続けやすくなります。「頑張って提案する」→「毎週火曜の朝に、提案先を1社決めて準備する」。いつ・何を・どれくらいを入れるのがコツです。</p><p class="small muted">キーワード：行動,計画,何から,手順,進め方,やり方</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">行動計画</span> <b>目標の「手前の行動」を3つ書き出す</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="110"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">目標に向けて「その前に何ができていればいいか」を3つ書き出してみましょう。たとえば売上目標なら「訪問件数」「提案件数」「フォローの連絡」。それぞれに頻度をつければ、行動計画のできあがりです。</p><p class="small muted">キーワード：具体的,方法,何をすれば,思いつか</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">行動計画</span> <b>「人に頼る行動」も立派な計画です</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="111"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">一人で抱えずに、先輩や上長に教わる時間を計画に入れるのも良い方法です。「月1回、先輩の売場づくりを見学する」など、学ぶ機会を行動計画に入れてみましょう。</p><p class="small muted">キーワード：先輩,教わ,相談,一人で</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">行動計画</span> <b>目標の言葉を計画にも入れる</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="112"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">行動計画に目標と同じ言葉を入れると、読んだ人にもつながりが伝わります。目標が「提案力を高める」なら、計画にも「提案書」「提案先」などの言葉を入れてみましょう。</p><p class="small muted">キーワード：つながり,関係,目標と</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">時間の使い方</span> <b>週に一度「目標の時間」を先に予約する</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="117"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">忙しい中で時間をつくるには、空いた時間を待つより先に予約するのが効果的です。週に一度、30分だけ「目標のための時間」をシフトや予定表に先に入れてみましょう。</p><p class="small muted">キーワード：時間,忙し,余裕,取れ</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">時間の使い方</span> <b>すきま時間でできる行動を用意しておく</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="118"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">店舗の仕事では、まとまった時間を取りにくいこともあります。「開店前の5分で棚を一つ見直す」「ピーク後に1件だけ振り返る」など、すきま時間でできる行動を決めておくと進めやすくなります。</p><p class="small muted">キーワード：シフト,店舗,接客,売場</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">時間の使い方</span> <b>「やめること」を一つ決めて時間をあける</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="119"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">やることが多いときは、効果の小さい作業を一つ減らせないか上長に相談してみましょう。時間をあけることも、立派な生産性向上の一手です。</p><p class="small muted">キーワード：優先,多すぎ,手が回ら,残業</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">時間の使い方</span> <b>期限から逆算して「月ごとの目安」を置く</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="120"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">期限から逆算して、毎月どこまで進んでいれば順調かを書き出してみましょう。月初に目安を見るだけで、遅れにも早めに気づけます。</p><p class="small muted">キーワード：スケジュール,計画倒れ,予定</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">達成のコツ</span> <b>小さく始めて、記録を見える場所に</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="113"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">続けるコツは、最初の一歩を小さくすることです。「毎日30分」が重ければ「毎日5分」から。できた日にチェックをつけるだけでも、続いていることが見えて力になります。</p><p class="small muted">キーワード：続か,習慣,忘れ,三日坊主</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">達成のコツ</span> <b>「できたこと」を週に一度ふり返る</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="114"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">気持ちが下がるのは自然なことです。週に一度、できたことを3つ書き出してみましょう。小さな前進に気づくと、次の一歩が軽くなります。上長との面談で共有するのもおすすめです。</p><p class="small muted">キーワード：モチベ,やる気,気持ち,疲れ</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">達成のコツ</span> <b>遅れに気づいたら、まず残りを分け直す</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="115"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">途中で遅れに気づけたのは良いことです。残りの期間で必要な量を週ごとに割り直してみましょう。それでも厳しいときは、早めに上長へ相談して、やり方や目標値を一緒に見直すと前に進めます。</p><p class="small muted">キーワード：途中,遅れ,間に合,挽回</p></li>
+      <li class="col"><div class="row-between wrap"><span><span class="pill soft">達成のコツ</span> <b>うまくいったやり方を言葉にして残す</b></span>
+      <span class="row"><a class="btn ghost sm" href="#preview-off">編集</a>
+        <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="delete"><input type="hidden" name="id" value="116"><button class="btn ghost sm" data-confirm-simple="非表示にしますか？">非表示</button></form></span></div>
+      <p class="small">うまくいったときは、何が効いたのかを一行メモに残しておきましょう。次の期の行動計画にそのまま使えますし、チームに共有すると周りの力にもなります。</p><p class="small muted">キーワード：達成,コツ,成功,うまく</p></li>
+    </ul>
+</section>
+</main>
+<dialog id="confirm" class="dlg">
+  <form method="dialog">
+    <p class="dlg-msg"></p>
+    <div class="dlg-reason" hidden>
+      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
+      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
+      <small class="count" data-count-for="dlg-reason-input"></small>
+    </div>
+    <div class="dlg-actions">
+      <button value="cancel" class="btn ghost">もどる</button>
+      <button value="ok" class="btn primary dlg-ok">提出する</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>

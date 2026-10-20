@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="same-origin">
+<title>人事：提出状況｜考課管理</title>
+<link rel="stylesheet" href="assets/app.css?v=6">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/preview.css"><script src="assets/preview.js" defer></script>
+<script src="assets/app.js?v=6" defer></script>
+</head>
+<body class="app"><div class="preview-bar" role="note"><a href="index.html">← 確認ボード</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+<header class="top">
+  <a class="brand" href="staff-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="staff-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
+    <a href="staff-sheet-draft.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
+              <a href="hr-list.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
+      <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
+        <a href="admin.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
+  </nav>
+  <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">山崎 陸さん</span>
+    <button type="submit" class="btn ghost sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5.5A1.5 1.5 0 0 0 12.5 4h-6A1.5 1.5 0 0 0 5 5.5v13A1.5 1.5 0 0 0 6.5 20h6a1.5 1.5 0 0 0 1.5-1.5V17M10 12h10M17 9l3 3-3 3"/></svg><span>ログアウト</span></button>
+  </form>
+</header>
+<main class="main" id="main">
+<section class="card">
+  <div class="row-between wrap"><h1 class="h2">社員の提出状況</h1>
+    </div>
+  <form method="get" class="filters">
+  <input type="hidden" name="r" value="hr">
+  <input type="hidden" name="view" value="tree">  <label>期<select name="period"><option value="12" selected>2026年度 下期</option><option value="11">2026年度 上期</option></select></label>
+  <label>期初・期末<select name="phase"><option value="goal">期初</option><option value="final">期末</option></select></label>
+  <label>拠点<select name="site_id"><option value="">（すべて）</option>
+    <option value="31">本店</option><option value="32">駅前店</option><option value="33">安城店</option><option value="34">岡崎店</option><option value="35">本部</option><option value="36">物流センター</option></select></label>
+  <label>部門<select name="dept_id"><option value="">（すべて）</option>
+    <option value="46">販売部</option><option value="47">仕入部</option><option value="48">管理部</option></select></label>
+  <label>役職<select name="position_id"><option value="">（すべて）</option><option value="31">一般社員</option><option value="32">主任</option><option value="33">係長</option><option value="34">課長</option><option value="35">部長</option><option value="36">役員</option></select></label>
+    <label>状況<select name="state"><option value="">（すべて）</option><option value="none">未提出</option><option value="review">上長確認中</option><option value="done">人事提出済</option></select></label>
+    <button class="btn soft sm">絞り込む</button>
+</form>
+  <div class="kpis">
+    <div class="kpi"><span>表示中</span><b>30</b>名</div>
+    <div class="kpi draft"><span>未提出</span><b>15</b>名</div>
+    <div class="kpi review"><span>上長確認中</span><b>10</b>名</div>
+    <div class="kpi done"><span>人事提出済</span><b>5</b>名</div>
+  </div>
+  <nav class="row wrap tabs" aria-label="表示の切替">
+    <a class="tab " href="#preview-off">社員リスト</a>
+    <a class="tab on" href="#preview-off">拠点→部門</a>
+    <a class="tab " href="#preview-off">未提出者だけ</a>
+  </nav>
+  <div class="row wrap tools">
+    <a class="btn ghost sm" href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>催促リスト（Excel）</a>
+    <a class="btn ghost sm" href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>総合評定一覧（Excel）</a>
+    <a class="btn ghost sm" href="#preview-off" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 17H5a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 5 9h14a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 19 17h-2"/><rect x="7" y="14" width="10" height="6" rx="1.5"/></svg>一覧を印刷・PDF</a>
+    <a class="btn ghost sm" href="#preview-off" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 17H5a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 5 9h14a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 19 17h-2"/><rect x="7" y="14" width="10" height="6" rx="1.5"/></svg>個別シートを一括で印刷・PDF</a>
+    <a class="btn ghost sm" href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>一括出力（ZIP）</a>
+  </div>
+</section>
+
+<section class="card">
+  <h2 class="h3">拠点→部門（期初）</h2>
+  <p class="small muted">提出率＝本人が上長へ提出した割合／確定率＝人事提出済の割合</p>
+    <ul class="tree">
+    <li><details open><summary><b>三河屋（全体）</b><span class="rate">30名　提出率 50%　確定率 17%</span>
+      <meter min="0" max="30" value="15"></meter></summary>
+      <ul>        <li><details open><summary>本店<span class="rate">6名　提出率 50%　確定率 0%</span><meter min="0" max="6" value="3"></meter></summary>
+          <ul>            <li class="leaf"><span>販売部</span><span class="rate">3名　提出率 33%　確定率 0%</span><meter min="0" max="3" value="1"></meter></li>
+                      <li class="leaf"><span>仕入部</span><span class="rate">1名　提出率 100%　確定率 0%</span><meter min="0" max="1" value="1"></meter></li>
+                      <li class="leaf"><span>管理部</span><span class="rate">2名　提出率 50%　確定率 0%</span><meter min="0" max="2" value="1"></meter></li>
+          </ul></details></li>
+              <li><details open><summary>駅前店<span class="rate">4名　提出率 50%　確定率 25%</span><meter min="0" max="4" value="2"></meter></summary>
+          <ul>            <li class="leaf"><span>販売部</span><span class="rate">2名　提出率 50%　確定率 50%</span><meter min="0" max="2" value="1"></meter></li>
+                      <li class="leaf"><span>仕入部</span><span class="rate">2名　提出率 50%　確定率 0%</span><meter min="0" max="2" value="1"></meter></li>
+          </ul></details></li>
+              <li><details open><summary>安城店<span class="rate">6名　提出率 50%　確定率 17%</span><meter min="0" max="6" value="3"></meter></summary>
+          <ul>            <li class="leaf"><span>販売部</span><span class="rate">3名　提出率 33%　確定率 33%</span><meter min="0" max="3" value="1"></meter></li>
+                      <li class="leaf"><span>仕入部</span><span class="rate">1名　提出率 100%　確定率 0%</span><meter min="0" max="1" value="1"></meter></li>
+                      <li class="leaf"><span>管理部</span><span class="rate">2名　提出率 50%　確定率 0%</span><meter min="0" max="2" value="1"></meter></li>
+          </ul></details></li>
+              <li><details open><summary>岡崎店<span class="rate">4名　提出率 50%　確定率 25%</span><meter min="0" max="4" value="2"></meter></summary>
+          <ul>            <li class="leaf"><span>販売部</span><span class="rate">2名　提出率 50%　確定率 0%</span><meter min="0" max="2" value="1"></meter></li>
+                      <li class="leaf"><span>仕入部</span><span class="rate">2名　提出率 50%　確定率 50%</span><meter min="0" max="2" value="1"></meter></li>
+          </ul></details></li>
+              <li><details open><summary>本部<span class="rate">6名　提出率 33%　確定率 17%</span><meter min="0" max="6" value="2"></meter></summary>
+          <ul>            <li class="leaf"><span>販売部</span><span class="rate">3名　提出率 67%　確定率 33%</span><meter min="0" max="3" value="2"></meter></li>
+                      <li class="leaf"><span>仕入部</span><span class="rate">1名　提出率 0%　確定率 0%</span><meter min="0" max="1" value="0"></meter></li>
+                      <li class="leaf"><span>管理部</span><span class="rate">2名　提出率 0%　確定率 0%</span><meter min="0" max="2" value="0"></meter></li>
+          </ul></details></li>
+              <li><details open><summary>物流センター<span class="rate">4名　提出率 75%　確定率 25%</span><meter min="0" max="4" value="3"></meter></summary>
+          <ul>            <li class="leaf"><span>販売部</span><span class="rate">2名　提出率 100%　確定率 50%</span><meter min="0" max="2" value="2"></meter></li>
+                      <li class="leaf"><span>仕入部</span><span class="rate">2名　提出率 50%　確定率 0%</span><meter min="0" max="2" value="1"></meter></li>
+          </ul></details></li>
+      </ul></details></li>
+  </ul>
+  </section>
+</main>
+<dialog id="confirm" class="dlg">
+  <form method="dialog">
+    <p class="dlg-msg"></p>
+    <div class="dlg-reason" hidden>
+      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
+      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
+      <small class="count" data-count-for="dlg-reason-input"></small>
+    </div>
+    <div class="dlg-actions">
+      <button value="cancel" class="btn ghost">もどる</button>
+      <button value="ok" class="btn primary dlg-ok">提出する</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>

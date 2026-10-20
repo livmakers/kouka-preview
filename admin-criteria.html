@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="same-origin">
+<title>期末査定の基準｜考課管理</title>
+<link rel="stylesheet" href="assets/app.css?v=6">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/preview.css"><script src="assets/preview.js" defer></script>
+<script src="assets/app.js?v=6" defer></script>
+</head>
+<body class="app"><div class="preview-bar" role="note"><a href="index.html">← 確認ボード</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+<header class="top">
+  <a class="brand" href="staff-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="staff-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
+    <a href="staff-sheet-draft.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
+              <a href="hr-list.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
+      <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
+        <a href="admin.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
+  </nav>
+  <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">山崎 陸さん</span>
+    <button type="submit" class="btn ghost sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5.5A1.5 1.5 0 0 0 12.5 4h-6A1.5 1.5 0 0 0 5 5.5v13A1.5 1.5 0 0 0 6.5 20h6a1.5 1.5 0 0 0 1.5-1.5V17M10 12h10M17 9l3 3-3 3"/></svg><span>ログアウト</span></button>
+  </form>
+</header>
+<main class="main" id="main">
+<p class="crumb"><a href="admin.html">管理</a> › 期末査定の基準</p>
+<form method="post" class="stack"><input type="hidden" name="csrf" value=""><section class="card">
+  <h1 class="h2">判定基準</h1>
+  <p class="small">難易度は<b>本人が1〜5で選び、上長が必要なときだけ修正</b>します（2段階以上変えるときは理由が必須。例外は人事が再判定）。ここでは期末査定の計算だけを設定します。</p>
+</section>
+<section class="card">
+  <h2 class="h3">期末査定（AI査定）</h2>
+  <p class="small muted">達成率から基本点を決めます（下限％以上でその点）。50%未満は1です。</p>
+  <div class="row wrap">
+    <label class="mini-in">基本点5の下限<input type="number" step="1" name="band_5" value="120">%</label><label class="mini-in">基本点4の下限<input type="number" step="1" name="band_4" value="100">%</label><label class="mini-in">基本点3の下限<input type="number" step="1" name="band_3" value="80">%</label><label class="mini-in">基本点2の下限<input type="number" step="1" name="band_2" value="50">%</label>  </div>
+  <div class="row wrap">
+    <label class="mini-in">難易度がこの値以上<input type="number" name="bonus_min_diff" value="4" min="1" max="5"></label>
+    <label class="mini-in">基本点2・3に加える点<input type="number" name="bonus_value" value="1" min="0" max="2"></label>
+    <label class="mini-in">難易度がこの値以下<input type="number" name="penalty_max_diff" value="2" min="1" max="5"></label>
+    <label class="mini-in">基本点5に加える点<input type="number" name="penalty_value" value="-1" min="-2" max="0"></label>
+  </div>
+  <p class="small muted">総合評定＝各目標の査定を難易度で重み付けした平均を四捨五入（1〜5）。</p>
+</section>
+<div class="row"><button class="btn primary">基準を保存する</button></div>
+</form>
+</main>
+<dialog id="confirm" class="dlg">
+  <form method="dialog">
+    <p class="dlg-msg"></p>
+    <div class="dlg-reason" hidden>
+      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
+      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
+      <small class="count" data-count-for="dlg-reason-input"></small>
+    </div>
+    <div class="dlg-actions">
+      <button value="cancel" class="btn ghost">もどる</button>
+      <button value="ok" class="btn primary dlg-ok">提出する</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>

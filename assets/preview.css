@@ -1,0 +1,16 @@
+/* 確認ボード用の帯と案内 */
+.preview-bar {
+  position: relative; z-index: 40; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+  padding: 8px 16px; background: #FCEEE2; color: #8F5E36; font-size: 13px; line-height: 1.5;
+}
+.preview-bar a { display: inline-flex; align-items: center; min-height: 40px; font-weight: 700; color: #8F5E36; }
+.preview-toast {
+  position: fixed; left: 50%; bottom: 96px; transform: translate(-50%, 20px); z-index: 60; max-width: min(92vw, 420px);
+  padding: 12px 18px; border-radius: 14px; background: #4A5D78; color: #fff; font-size: 14px; line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(74, 93, 120, .3); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+}
+.preview-toast.on { opacity: 1; transform: translate(-50%, 0); }
+body.print .preview-bar { position: sticky; top: 0; }
+@media print { .preview-bar, .preview-toast { display: none !important; } }
+.board-notes { margin: 0; padding-left: 1.2em; font-size: 14px; line-height: 1.8; }
+.board-notes li { margin-bottom: 4px; }

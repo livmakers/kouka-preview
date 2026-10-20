@@ -1,0 +1,47 @@
+/* 印刷・PDF：A4、本文12pt以上、見出し14pt以上、行間1.5。表紙・目次なし */
+@page { size: A4 portrait; margin: 12mm 11mm; }
+.landscape { }
+@page land { size: A4 landscape; }
+body.landscape .psheet { page: land; }
+* { box-sizing: border-box; }
+body.print {
+  margin: 0; color: #2F3E55; background: #fff;
+  font-family: "Hiragino Maru Gothic ProN", "Yu Gothic UI", "Yu Gothic", YuGothic, "Noto Sans JP", Meiryo, sans-serif;
+  font-size: 12pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.print-bar { position: sticky; top: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 16px; background: #F7F9FB; box-shadow: 0 2px 10px rgba(74,93,120,.1); font-size: 14px; color: #4A5D78; }
+.pbtn { min-height: 44px; padding: 8px 24px; border: 0; border-radius: 999px; background: #6C8EB2; color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+.psheet { max-width: 190mm; margin: 0 auto; padding: 8mm 0; }
+body.landscape .psheet { max-width: 277mm; }
+.psheet + .psheet { break-before: page; }
+h1 { font-size: 16pt; margin: 0 0 8pt; }
+h1 small { font-size: 12pt; font-weight: 400; }
+h2 { font-size: 14pt; margin: 12pt 0 4pt; padding: 3pt 10pt; color: #fff; background: #6C8EB2; border-radius: 6pt; break-after: avoid; }
+.cond { font-size: 12pt; margin: 0 0 6pt; }
+.pt { width: 100%; border-collapse: collapse; table-layout: auto; break-inside: auto; }
+.pt tr { break-inside: avoid; }
+.pt th, .pt td { border: 0.6pt solid #C9D6E4; padding: 3pt 5pt; vertical-align: top; text-align: left; font-size: 12pt; overflow-wrap: anywhere; }
+.pt th { background: #E4EDF6; font-weight: 700; white-space: nowrap; }
+.pt thead th { white-space: nowrap; vertical-align: bottom; }
+.pt td.in { background: #FFF3DC; }
+.pt td.auto { background: #EDF0F4; }
+.pt .c { text-align: center; }
+.pt .r { text-align: right; }
+.pt .nw { white-space: nowrap; }
+.pt th.w { width: 18%; }
+.pt.list th, .pt.list td { font-size: 12pt; }
+/* 画面で見るとき（スマホ・タブレット）：A4の表を項目ごとのカードに積み上げる。印刷には影響しない */
+@media screen and (max-width: 900px) {
+  .psheet { padding: 12px 16px; }
+  .pt, .pt tbody, .pt tr, .pt th, .pt td { display: block; width: 100% !important; }
+  .pt thead { display: none; }
+  .pt tr { margin-bottom: 10px; border: 0.6pt solid #C9D6E4; border-radius: 10px; overflow: hidden; }
+  .pt th, .pt td { border: 0; border-bottom: 0.6pt solid #E4EDF6; white-space: normal; text-align: left !important; }
+  .pt td[data-th]::before { content: attr(data-th); display: block; font-size: 12px; font-weight: 700; color: #6B7A90; }
+  .pt td:empty { display: none; }
+  .pt td[data-th]:empty { display: block; }
+}
+@media print {
+  .no-print { display: none !important; }
+  .psheet { padding: 0; max-width: none; }
+}

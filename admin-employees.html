@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="same-origin">
+<title>社員管理｜考課管理</title>
+<link rel="stylesheet" href="assets/app.css?v=6">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/preview.css"><script src="assets/preview.js" defer></script>
+<script src="assets/app.js?v=6" defer></script>
+</head>
+<body class="app"><div class="preview-bar" role="note"><a href="index.html">← 確認ボード</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+<header class="top">
+  <a class="brand" href="staff-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="staff-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
+    <a href="staff-sheet-draft.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
+              <a href="hr-list.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
+      <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
+        <a href="admin.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
+  </nav>
+  <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">山崎 陸さん</span>
+    <button type="submit" class="btn ghost sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5.5A1.5 1.5 0 0 0 12.5 4h-6A1.5 1.5 0 0 0 5 5.5v13A1.5 1.5 0 0 0 6.5 20h6a1.5 1.5 0 0 0 1.5-1.5V17M10 12h10M17 9l3 3-3 3"/></svg><span>ログアウト</span></button>
+  </form>
+</header>
+<main class="main" id="main">
+<p class="crumb"><a href="admin.html">管理</a> › 社員・ロール</p>
+
+
+
+<section class="card">
+  <div class="row-between wrap"><h1 class="h2">社員一覧（30名）</h1>
+    <a class="btn soft sm" href="#preview-off">＋ 社員を追加</a></div>
+  <form method="get" class="row wrap"><input type="hidden" name="r" value="admin_employees">
+    <input name="q" value="" placeholder="社員番号・氏名で検索" aria-label="検索"><button class="btn ghost sm">検索</button></form>
+  <div class="tbl-wrap"><table class="tbl">
+    <thead><tr><th>社員番号</th><th>氏名</th><th>拠点</th><th>役職</th><th>上長</th><th>ロール</th><th>状態</th><th><span class="sr">操作</span></th></tr></thead><tbody>
+        <tr><td data-th="社員番号">A001</td><td data-th="氏名"><b>吉田 花子</b></td><td data-th="拠点">安城店</td>
+      <td data-th="役職">部長</td><td data-th="上長">―</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A001"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A010</td><td data-th="氏名"><b>山田 翔太</b></td><td data-th="拠点">安城店</td>
+      <td data-th="役職">課長</td><td data-th="上長">吉田 花子</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A010"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A011</td><td data-th="氏名"><b>佐々木 彩</b></td><td data-th="拠点">安城店</td>
+      <td data-th="役職">主任</td><td data-th="上長">山田 翔太</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A011"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A012</td><td data-th="氏名"><b>山口 健太</b></td><td data-th="拠点">安城店</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">山田 翔太</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A012"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A013</td><td data-th="氏名"><b>松本 真央</b></td><td data-th="拠点">安城店</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">山田 翔太</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A013"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A020</td><td data-th="氏名"><b>井上 拓海</b></td><td data-th="拠点">岡崎店</td>
+      <td data-th="役職">課長</td><td data-th="上長">吉田 花子</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A020"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A021</td><td data-th="氏名"><b>木村 七海</b></td><td data-th="拠点">岡崎店</td>
+      <td data-th="役職">主任</td><td data-th="上長">井上 拓海</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A021"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A022</td><td data-th="氏名"><b>林 颯</b></td><td data-th="拠点">岡崎店</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">井上 拓海</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A022"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A023</td><td data-th="氏名"><b>清水 優花</b></td><td data-th="拠点">岡崎店</td>
+      <td data-th="役職">係長</td><td data-th="上長">井上 拓海</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A023"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">A090</td><td data-th="氏名"><b>山崎 陸</b></td><td data-th="拠点">安城店</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">吉田 花子</td>
+      <td data-th="ロール">人事・管理者</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="A090"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M001</td><td data-th="氏名"><b>佐藤 陽菜</b></td><td data-th="拠点">本店</td>
+      <td data-th="役職">部長</td><td data-th="上長">―</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M001"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M010</td><td data-th="氏名"><b>鈴木 蓮</b></td><td data-th="拠点">本店</td>
+      <td data-th="役職">課長</td><td data-th="上長">佐藤 陽菜</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M010"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M011</td><td data-th="氏名"><b>高橋 結衣</b></td><td data-th="拠点">本店</td>
+      <td data-th="役職">主任</td><td data-th="上長">鈴木 蓮</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M011"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M012</td><td data-th="氏名"><b>田中 湊</b></td><td data-th="拠点">本店</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">鈴木 蓮</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M012"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M013</td><td data-th="氏名"><b>伊藤 美咲</b></td><td data-th="拠点">本店</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">鈴木 蓮</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M013"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M020</td><td data-th="氏名"><b>渡辺 大翔</b></td><td data-th="拠点">駅前店</td>
+      <td data-th="役職">課長</td><td data-th="上長">佐藤 陽菜</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M020"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M021</td><td data-th="氏名"><b>山本 葵</b></td><td data-th="拠点">駅前店</td>
+      <td data-th="役職">主任</td><td data-th="上長">渡辺 大翔</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M021"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M022</td><td data-th="氏名"><b>中村 悠真</b></td><td data-th="拠点">駅前店</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">渡辺 大翔</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M022"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">M023</td><td data-th="氏名"><b>小林 凛</b></td><td data-th="拠点">駅前店</td>
+      <td data-th="役職">係長</td><td data-th="上長">渡辺 大翔</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍 <span class="pill soft">PIN未設定</span></td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                </td></tr>
+        <tr><td data-th="社員番号">M090</td><td data-th="氏名"><b>加藤 樹</b></td><td data-th="拠点">本店</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">佐藤 陽菜</td>
+      <td data-th="ロール">人事</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="M090"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T001</td><td data-th="氏名"><b>森 紗希</b></td><td data-th="拠点">本部</td>
+      <td data-th="役職">部長</td><td data-th="上長">―</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T001"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T010</td><td data-th="氏名"><b>池田 直樹</b></td><td data-th="拠点">本部</td>
+      <td data-th="役職">課長</td><td data-th="上長">森 紗希</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T010"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T011</td><td data-th="氏名"><b>橋本 千尋</b></td><td data-th="拠点">本部</td>
+      <td data-th="役職">主任</td><td data-th="上長">池田 直樹</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T011"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T012</td><td data-th="氏名"><b>阿部 航</b></td><td data-th="拠点">本部</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">池田 直樹</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T012"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T013</td><td data-th="氏名"><b>石川 舞</b></td><td data-th="拠点">本部</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">池田 直樹</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T013"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T020</td><td data-th="氏名"><b>前田 誠</b></td><td data-th="拠点">物流センター</td>
+      <td data-th="役職">課長</td><td data-th="上長">森 紗希</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T020"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T021</td><td data-th="氏名"><b>藤田 恵</b></td><td data-th="拠点">物流センター</td>
+      <td data-th="役職">主任</td><td data-th="上長">前田 誠</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T021"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T022</td><td data-th="氏名"><b>小川 亮</b></td><td data-th="拠点">物流センター</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">前田 誠</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T022"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T023</td><td data-th="氏名"><b>岡田 早紀</b></td><td data-th="拠点">物流センター</td>
+      <td data-th="役職">係長</td><td data-th="上長">前田 誠</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T023"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+        <tr><td data-th="社員番号">T090</td><td data-th="氏名"><b>長谷川 修</b></td><td data-th="拠点">本部</td>
+      <td data-th="役職">一般社員</td><td data-th="上長">森 紗希</td>
+      <td data-th="ロール">―</td>
+      <td data-th="状態">在籍</td>
+      <td class="acts"><a class="btn ghost sm" href="#preview-off">編集</a>
+                <form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="reset_pin"><input type="hidden" name="emp_no" value="T090"><button class="btn ghost sm" data-confirm-simple="PINを初期化しますか？本人は次回、入社日で確認して設定し直します。">PIN初期化</button></form></td></tr>
+    </tbody></table></div>
+</section>
+
+<section class="card">
+  <h2 class="h3">CSVで一括取込・更新</h2>
+  <p class="small">1行目は見出しでも構いません。列の順番：<code>社員番号,氏名,拠点,部門,役職,上長社員番号,入社日,在籍状態,メール,ロール</code><br>
+    拠点・部門・役職はマスタに無い名前なら自動で作成します。在籍状態は「在籍／休職／退職」、ロールは「人事;管理者」のように書けます。文字コードは UTF-8・Shift_JIS のどちらでも読めます。</p>
+  <form method="post" action="#preview-off" enctype="multipart/form-data" class="row wrap"><input type="hidden" name="csrf" value="">    <input type="file" name="csv" accept=".csv,text/csv" required aria-label="CSVファイル">
+    <label class="chk"><input type="checkbox" name="dry" value="1" checked>まず確認だけ（保存しない）</label>
+    <button class="btn soft sm">取り込む</button></form>
+  <p class="small muted"><a href="assets/employees-sample.csv" download>サンプルCSVをダウンロード</a></p>
+</section>
+</main>
+<dialog id="confirm" class="dlg">
+  <form method="dialog">
+    <p class="dlg-msg"></p>
+    <div class="dlg-reason" hidden>
+      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
+      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
+      <small class="count" data-count-for="dlg-reason-input"></small>
+    </div>
+    <div class="dlg-actions">
+      <button value="cancel" class="btn ghost">もどる</button>
+      <button value="ok" class="btn primary dlg-ok">提出する</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>
