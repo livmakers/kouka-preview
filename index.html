@@ -1,32 +1,81 @@
 <!doctype html>
+
 <html lang="ja">
+
 <head>
+
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <meta name="robots" content="noindex, nofollow">
-<title>確認ボード｜考課管理システム</title>
+
+<meta name="referrer" content="same-origin">
+
+<title>ログイン｜考課管理</title>
+
 <link rel="stylesheet" href="assets/app.css?v=6">
-<link rel="stylesheet" href="assets/preview.css">
+
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="assets/preview.css"><script src="assets/preview-logins.js"></script><script src="assets/preview.js" defer></script>
+<script src="assets/app.js?v=6" defer></script>
+
 </head>
-<body class="app">
-<main class="main">
-  <section class="card hero hello">
-    <p class="eyebrow">社内確認用</p>
-    <h1>考課管理システム 確認ボード</h1>
-    <p class="muted">目標管理シート（本人記入用 v6）の Web 版です。デモ会社「三河屋」・架空の社員30名で、立場ごとの画面を並べています。</p>
-    <p class="hero-copy">一人ひとりの目標が、チームの力になる。</p>
-  </section>
-  <section class="card">
-    <h2 class="h3">見るときのお願い</h2>
-    <ul class="board-notes">
-      <li>ここにあるのは<b>画面の写し</b>です。入力・提出・Excel出力は動きません（本番は各社のサーバーに設置して動かします）。</li>
-      <li>氏名・社員番号・数字はすべて<b>架空のデモデータ</b>です。</li>
-      <li>スマホでも開けます。店舗スタッフの使い心地はスマホでご確認ください。</li>
-      <li>気になった点は、画面名（例：「上長／部下の考課表」）を添えてお知らせください。</li>
-    </ul>
-  </section>
-  <section class="card"><h2 class="sec">はじめに</h2><div class="menu-grid"><a class="menu" href="login.html"><b>ログイン</b><span>社員番号（＋本人PIN）で入ります。写真は透かしで淡く。</span></a></div></section><section class="card"><h2 class="sec">社員</h2><div class="menu-grid"><a class="menu" href="staff-home.html"><b><span class="pill soft">M011</span> 社員ホーム</b><span>今期の考課表・進み具合・次の期限・過去期の一覧。</span></a><a class="menu" href="staff-sheet-draft.html"><b><span class="pill soft">M011</span> 考課表（記入中）</b><span>目標を書き、右側で難易度を1〜5で選ぶ。入力チェック・相談ボックス・提出ボタン。</span></a><a class="menu" href="staff-sheet-done.html"><b><span class="pill soft">T011</span> 考課表（期初確定・閲覧のみ）</b><span>提出後は本人が書き換えられない状態。</span></a><a class="menu" href="staff-sheet-final.html"><b><span class="pill soft">T011</span> 期末の振り返り（前期・確定済）</b><span>達成率・AI査定・次期に伸ばす一手・総合評定。</span></a></div></section><section class="card"><h2 class="sec">上長</h2><div class="menu-grid"><a class="menu" href="mgr-team.html"><b><span class="pill soft">M010</span> 部下の管理シート一覧</b><span>提出された考課表が「確認をお願いします」に並ぶ。期限超過はやさしい赤。</span></a><a class="menu" href="mgr-sheet.html"><b><span class="pill soft">M010</span> 部下の考課表（上長確認中）</b><span>本人が選んだ難易度を見て、違うときだけ修正。コメント→人事へ提出／差戻し。</span></a></div></section><section class="card"><h2 class="sec">人事</h2><div class="menu-grid"><a class="menu" href="hr-list.html"><b><span class="pill soft">A090</span> 提出状況（社員リスト）</b><span>期初・期末別に未提出／上長確認中／人事提出済。出力ボタン一式。</span></a><a class="menu" href="hr-tree.html"><b><span class="pill soft">A090</span> 拠点→部門の提出率</b><span>会社全体→拠点→部門の入れ子で提出率・確定率。</span></a><a class="menu" href="hr-none.html"><b><span class="pill soft">A090</span> 未提出者だけ</b><span>催促リストの出力元。</span></a><a class="menu" href="hr-stats.html"><b><span class="pill soft">A090</span> 集計（前期・拠点別）</b><span>評定1〜5の分布・平均・提出率・期限超過。</span></a><a class="menu" href="hr-sheet.html"><b><span class="pill soft">A090</span> 考課表（人事として閲覧）</b><span>人事メモ（本人・上長には非表示）と難易度の再判定。</span></a></div></section><section class="card"><h2 class="sec">印刷・出力</h2><div class="menu-grid"><a class="menu" href="print-sheet.html"><b><span class="pill soft">A090</span> 個別評定シート（印刷・PDF）</b><span>A4・本文12pt・見出し14pt。ブラウザの印刷でPDF保存。</span></a><a class="menu" href="print-list.html"><b><span class="pill soft">A090</span> 総合評定一覧（印刷・PDF）</b><span>絞込条件を反映した一覧。</span></a></div></section><section class="card"><h2 class="sec">管理者</h2><div class="menu-grid"><a class="menu" href="admin.html"><b><span class="pill soft">A090</span> 管理メニュー</b><span></span></a><a class="menu" href="admin-employees.html"><b><span class="pill soft">A090</span> 社員・ロール・CSV取込</b><span>社員の登録・上長・ロール・ログイン停止の解除・CSV一括取込。</span></a><a class="menu" href="admin-master.html"><b><span class="pill soft">A090</span> マスタ（役職・拠点・部門）</b><span>1社1サイトなので会社の選択欄はなし。</span></a><a class="menu" href="admin-periods.html"><b><span class="pill soft">A090</span> 評価期間</b><span>上期・下期、受付期間と提出期限。</span></a><a class="menu" href="admin-criteria.html"><b><span class="pill soft">A090</span> 期末査定の基準</b><span>達成率→基本点と、難易度による補正値。</span></a><a class="menu" href="admin-knowledge.html"><b><span class="pill soft">A090</span> 社内ナレッジ</b><span>相談ボックスに出すアドバイス集。</span></a><a class="menu" href="admin-settings.html"><b><span class="pill soft">A090</span> 会社名・ログイン・通知</b><span>会社名、PIN方式、メール通知、バックアップ。</span></a><a class="menu" href="admin-audit.html"><b><span class="pill soft">A090</span> 監査ログ</b><span>誰が・いつ・何をしたか。</span></a></div></section>
+
+<body class="bare"><div class="preview-bar" role="note"><a href="board.html">画面一覧</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+
+<main class="main" id="main">
+
+<section class="auth card hero-top">
+
+  <div class="auth-head"><span class="logo lg" aria-hidden="true"></span><p class="eyebrow">三河屋</p><h1>考課管理</h1><p>目標と成長を、いつでも見える場所に。</p></div>
+
+    <form method="post" action="#preview-off" class="stack" autocomplete="off">
+
+    <input type="hidden" name="csrf" value="">    <div class="fld"><label for="emp_no">社員番号</label>
+
+      <input id="emp_no" name="emp_no" inputmode="text" autocomplete="username" required maxlength="20" value=""></div>
+
+        <button class="btn primary block" type="submit">ログイン</button>
+
+  </form><div class="demo-logins"><p class="small"><b>デモの社員番号</b>（押すと入力されます）</p><ul><li><button type="button" class="demo-id" data-demo-id="M011"><b>M011</b><span>社員</span></button><small>自分の考課表を書いて提出する</small></li><li><button type="button" class="demo-id" data-demo-id="M010"><b>M010</b><span>上長</span></button><small>部下の考課表を確認してコメントする</small></li><li><button type="button" class="demo-id" data-demo-id="A090"><b>A090</b><span>人事・管理者</span></button><small>提出状況・集計・出力・マスタ管理</small></li></ul><p class="small muted">この確認用ページは社員番号だけで入れます。本番は社員番号＋本人PINです。　<a href="board.html">画面一覧から選ぶ</a></p></div>
+
+  <p class="muted small">PINを忘れたときは、管理者に初期化を依頼してください。</p>
+
+</section>
+
 </main>
+
+<dialog id="confirm" class="dlg">
+
+  <form method="dialog">
+
+    <p class="dlg-msg"></p>
+
+    <div class="dlg-reason" hidden>
+
+      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
+
+      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
+
+      <small class="count" data-count-for="dlg-reason-input"></small>
+
+    </div>
+
+    <div class="dlg-actions">
+
+      <button value="cancel" class="btn ghost">もどる</button>
+
+      <button value="ok" class="btn primary dlg-ok">提出する</button>
+
+    </div>
+
+  </form>
+
+</dialog>
+
 </body>
+
 </html>
+

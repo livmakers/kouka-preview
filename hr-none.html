@@ -11,12 +11,12 @@
 <link rel="stylesheet" href="assets/preview.css"><script src="assets/preview.js" defer></script>
 <script src="assets/app.js?v=6" defer></script>
 </head>
-<body class="app"><div class="preview-bar" role="note"><a href="index.html">← 確認ボード</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+<body class="app"><div class="preview-bar" role="note"><a href="board.html">画面一覧</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
 <header class="top">
-  <a class="brand" href="staff-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
+  <a class="brand" href="hr-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
   <nav class="nav" aria-label="メインメニュー">
-    <a href="staff-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
-    <a href="staff-sheet-draft.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
+    <a href="hr-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
+    <a href="hr-own-sheet.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
               <a href="hr-list.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
       <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
         <a href="admin.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
@@ -80,7 +80,7 @@
       <td data-th="期初"><span class="badge draft">未提出</span></td>
       <td data-th="期末"><span class="badge draft">未提出</span></td>
       <td data-th="総合">―</td>
-      <td><a class="btn ghost sm" href="staff-sheet-draft.html">開く</a></td>
+      <td><a class="btn ghost sm" href="#preview-off">開く</a></td>
     </tr>
         <tr class="">
       <td data-th="氏名"><b>佐藤 陽菜</b><small>M001</small></td>

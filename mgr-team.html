@@ -11,12 +11,12 @@
 <link rel="stylesheet" href="assets/preview.css"><script src="assets/preview.js" defer></script>
 <script src="assets/app.js?v=6" defer></script>
 </head>
-<body class="app"><div class="preview-bar" role="note"><a href="index.html">← 確認ボード</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+<body class="app"><div class="preview-bar" role="note"><a href="board.html">画面一覧</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
 <header class="top">
-  <a class="brand" href="staff-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
+  <a class="brand" href="mgr-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
   <nav class="nav" aria-label="メインメニュー">
-    <a href="staff-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
-    <a href="staff-sheet-draft.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
+    <a href="mgr-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
+    <a href="mgr-own-sheet.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
     <a href="mgr-team.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><circle cx="16.5" cy="10" r="2.4"/><path d="M3.8 19c.6-3 2.7-4.6 5.2-4.6s4.6 1.6 5.2 4.6M14.5 15c2.6-.4 4.9.9 5.6 4"/></svg><span>部下</span></a>            <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
   </nav>
   <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">鈴木 蓮さん</span>
