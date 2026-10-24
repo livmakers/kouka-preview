@@ -412,3 +412,57 @@ meter::-moz-meter-bar { background: var(--green); border-radius: 6px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- 考課シート v6（業績考課＋定性評価） ---------- */
+.rate5 { flex-wrap: nowrap; }
+.rate5 label { flex: 1; }
+.rate5 span { width: 100%; min-width: 0; padding: 6px 0; font-size: .85rem; }
+.diff-box .rate:not(.rate5) { flex-wrap: nowrap; }
+.diff-box .rate:not(.rate5) label { flex: 1; }
+.diff-box .rate:not(.rate5) span { width: 100%; min-width: 0; }
+.lv { font-size: 1.05rem; }
+.wt { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin: 6px 0 0; font-size: .82rem; color: var(--muted); }
+.wt b { font-size: 1.2rem; color: var(--text); }
+.total-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; padding: 12px 16px; margin: 6px 0 10px; border-radius: 14px; background: var(--auto); font-weight: 700; }
+.total-line b { font-size: 1.6rem; color: var(--sec); }
+.points { list-style: none; margin: 0; padding: 0; font-size: .9rem; line-height: 1.7; }
+.points li::before { content: "●"; color: var(--sec); margin-right: 4px; font-size: .75em; }
+.checks-inline { list-style: none; margin: 0 0 8px; padding: 0; }
+.checks-inline li { font-size: .85rem; padding: 6px 12px; border-radius: 10px; background: #fff; }
+details.scale { margin: 8px 0 12px; background: #fff; border-radius: 12px; padding: 4px 12px; }
+details.scale summary { min-height: 42px; display: flex; align-items: center; cursor: pointer; font-weight: 700; font-size: .9rem; }
+.scale-tbl td { font-size: .82rem; vertical-align: top; }
+.score-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 10px; }
+.score-grid > div { background: var(--auto); border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.score-grid span { font-size: .8rem; color: var(--muted); font-weight: 700; }
+.score-grid b { font-size: 1.7rem; line-height: 1.2; }
+@media (max-width: 640px) { .score-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.grade { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; padding: 0 10px; border-radius: 999px;
+  font-weight: 800; font-size: 1.2rem; color: #fff; background: #9AA8B9; }
+.grade.none { background: var(--auto); color: var(--muted); }
+.grade.g-S { background: #E9A26B; }
+.grade.g-A { background: #6FB095; }
+.grade.g-B { background: #6C8EB2; }
+.grade.g-C { background: #A3B3C6; }
+.grade.g-D { background: #C9B6A8; }
+.grade-pt { margin-left: 6px; font-size: .85rem; color: var(--muted); }
+.grade-box [data-grade] .grade { min-width: 56px; height: 56px; font-size: 1.7rem; }
+.promo { padding: 10px 14px; border-radius: 12px; background: var(--auto); font-weight: 700; }
+.promo.ok { background: var(--ok-bg); color: var(--ok-text); }
+.promo.hold { background: var(--late-bg); color: var(--late-text); }
+.stamps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 640px) { .stamps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.stamp { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 6px; border-radius: 14px; background: #fff; text-align: center; }
+.stamp > span { font-size: .8rem; font-weight: 700; color: var(--muted); }
+.seal { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%;
+  border: 2px solid #D9735B; color: #D9735B; font-size: .95rem; font-weight: 800; letter-spacing: .02em; }
+.seal.empty { border: 2px dashed #CBD5E1; }
+.stamp small { font-size: .75rem; color: var(--muted); }
+.stamp form { margin-top: 2px; }
+.qual-edit { border: 0; padding: 12px; margin: 0 0 12px; border-radius: 14px; background: #fff; }
+.qual-edit legend { font-weight: 700; color: var(--sec); }
+.qual-row { padding: 8px 0; border-top: 1px dashed #E4EDF6; align-items: start; }
+/* 閲覧のみの選択値は1行で（ラベル左・値右） */
+.diff-box .fld:has(> .ro) { flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+.diff-box .fld:has(> .ro) > label { padding-right: 0; }
+.diff-box .fld > .ro { min-height: 0; padding: 2px 12px; background: transparent; }

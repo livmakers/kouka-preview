@@ -1,65 +1,220 @@
-<!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<meta name="referrer" content="same-origin">
-<title>期末査定の基準｜考課管理</title>
-<link rel="stylesheet" href="assets/app.css?v=6">
-<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="same-origin">
+<title>配点・判定の基準｜考課管理</title>
+<link rel="stylesheet" href="assets/app.css?v=8">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/preview.css"><script src="assets/preview.js" defer></script>
-<script src="assets/app.js?v=6" defer></script>
-</head>
-<body class="app"><div class="preview-bar" role="note"><a href="board.html">画面一覧</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
-<header class="top">
-  <a class="brand" href="hr-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
-  <nav class="nav" aria-label="メインメニュー">
-    <a href="hr-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
-    <a href="hr-own-sheet.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
-              <a href="hr-list.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
-      <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
-        <a href="admin.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
-  </nav>
-  <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">山崎 陸さん</span>
-    <button type="submit" class="btn ghost sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5.5A1.5 1.5 0 0 0 12.5 4h-6A1.5 1.5 0 0 0 5 5.5v13A1.5 1.5 0 0 0 6.5 20h6a1.5 1.5 0 0 0 1.5-1.5V17M10 12h10M17 9l3 3-3 3"/></svg><span>ログアウト</span></button>
-  </form>
-</header>
-<main class="main" id="main">
-<p class="crumb"><a href="admin.html">管理</a> › 期末査定の基準</p>
-<form method="post" class="stack"><input type="hidden" name="csrf" value=""><section class="card">
-  <h1 class="h2">判定基準</h1>
-  <p class="small">難易度は<b>本人が1〜5で選び、上長が必要なときだけ修正</b>します（2段階以上変えるときは理由が必須。例外は人事が再判定）。ここでは期末査定の計算だけを設定します。</p>
-</section>
+<script src="assets/app.js?v=7" defer></script>
+</head>
+<body class="app"><div class="preview-bar" role="note"><a href="board.html">画面一覧</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+<header class="top">
+  <a class="brand" href="hr-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="hr-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
+    <a href="hr-own-sheet.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
+              <a href="hr-list.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
+      <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
+        <a href="admin.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
+  </nav>
+  <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">山崎 陸さん</span>
+    <button type="submit" class="btn ghost sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5.5A1.5 1.5 0 0 0 12.5 4h-6A1.5 1.5 0 0 0 5 5.5v13A1.5 1.5 0 0 0 6.5 20h6a1.5 1.5 0 0 0 1.5-1.5V17M10 12h10M17 9l3 3-3 3"/></svg><span>ログアウト</span></button>
+  </form>
+</header>
+<main class="main" id="main">
+<p class="crumb"><a href="admin.html">管理</a> › 配点・判定の基準</p>
+<form method="post" class="stack"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="scores">
 <section class="card">
-  <h2 class="h3">期末査定（AI査定）</h2>
-  <p class="small muted">達成率から基本点を決めます（下限％以上でその点）。50%未満は1です。</p>
+  <h1 class="h2">配点・判定の基準</h1>
+  <p class="small">ここを変えると、すべての考課シートの点数がその場で計算し直されます。初期値は考課シート v6（業績考課70点＋定性評価30点）の「設定」シートと同じ値です。</p>
+  <h2 class="h3">① 達成度 → 業績点への換算率</h2>
+  <div class="tbl-wrap"><table class="tbl crit">
+    <thead><tr><th>達成度</th><th>意味</th><th>換算率</th></tr></thead><tbody>
+    <tr><th>0点</th><td data-th="意味">目標を著しく未達成、何もしていない</td>
+      <td data-th="換算率"><input type="number" step="1" min="0" max="100" name="rate_0" value="0" aria-label="達成度0点の換算率">%</td></tr><tr><th>1点</th><td data-th="意味">アクションは起こしているが、目標に達していない</td>
+      <td data-th="換算率"><input type="number" step="1" min="0" max="100" name="rate_1" value="40" aria-label="達成度1点の換算率">%</td></tr><tr><th>2点</th><td data-th="意味">アクションを起こし、目標を達成した</td>
+      <td data-th="換算率"><input type="number" step="1" min="0" max="100" name="rate_2" value="75" aria-label="達成度2点の換算率">%</td></tr><tr><th>3点</th><td data-th="意味">アクションする事で回りも影響を受け、大きく目標を達成</td>
+      <td data-th="換算率"><input type="number" step="1" min="0" max="100" name="rate_3" value="90" aria-label="達成度3点の換算率">%</td></tr><tr><th>4点</th><td data-th="意味">アクションが他の模範となるもので、会社のレベルアップに貢献</td>
+      <td data-th="換算率"><input type="number" step="1" min="0" max="100" name="rate_4" value="100" aria-label="達成度4点の換算率">%</td></tr>    </tbody></table></div>
+  <h2 class="h3">② 難易度 → ウェイト</h2>
+  <div class="tbl-wrap"><table class="tbl crit">
+    <thead><tr><th>難易度</th><th>意味</th><th>ウェイト</th></tr></thead><tbody>
+    <tr><th>Lv0</th><td data-th="意味">目標達成も、何も変化が起きない</td>
+      <td data-th="ウェイト"><input type="number" step="0.5" min="0" max="20" name="weight_0" value="0" aria-label="Lv0のウェイト"></td></tr><tr><th>Lv1</th><td data-th="意味">目標達成で、自身のレベルアップが出来る取り組み</td>
+      <td data-th="ウェイト"><input type="number" step="0.5" min="0" max="20" name="weight_1" value="1" aria-label="Lv1のウェイト"></td></tr><tr><th>Lv2</th><td data-th="意味">目標達成で、自部門のレベルアップが出来る取り組み</td>
+      <td data-th="ウェイト"><input type="number" step="0.5" min="0" max="20" name="weight_2" value="2" aria-label="Lv2のウェイト"></td></tr><tr><th>Lv3</th><td data-th="意味">困難な目標だが、大きく自部門がレベルアップする取り組み</td>
+      <td data-th="ウェイト"><input type="number" step="0.5" min="0" max="20" name="weight_3" value="3" aria-label="Lv3のウェイト"></td></tr><tr><th>Lv4</th><td data-th="意味">困難な目標だが、大きく会社がレベルアップする取り組み</td>
+      <td data-th="ウェイト"><input type="number" step="0.5" min="0" max="20" name="weight_4" value="4" aria-label="Lv4のウェイト"></td></tr>    </tbody></table></div>
+  <h2 class="h3">③ 点数・判定の基準</h2>
   <div class="row wrap">
-    <label class="mini-in">基本点5の下限<input type="number" step="1" name="band_5" value="120">%</label><label class="mini-in">基本点4の下限<input type="number" step="1" name="band_4" value="100">%</label><label class="mini-in">基本点3の下限<input type="number" step="1" name="band_3" value="80">%</label><label class="mini-in">基本点2の下限<input type="number" step="1" name="band_2" value="50">%</label>  </div>
-  <div class="row wrap">
-    <label class="mini-in">難易度がこの値以上<input type="number" name="bonus_min_diff" value="4" min="1" max="5"></label>
-    <label class="mini-in">基本点2・3に加える点<input type="number" name="bonus_value" value="1" min="0" max="2"></label>
-    <label class="mini-in">難易度がこの値以下<input type="number" name="penalty_max_diff" value="2" min="1" max="5"></label>
-    <label class="mini-in">基本点5に加える点<input type="number" name="penalty_value" value="-1" min="-2" max="0"></label>
+    <label class="mini-in">業績点の満点<input type="number" step="1" name="perf_max" value="70"></label>
+    <label class="mini-in">定性点の満点<input type="number" step="1" name="qual_max" value="30"></label>
+    <label class="mini-in">登用の定性ライン<input type="number" step="0.1" name="promo_line" value="18"></label>
   </div>
-  <p class="small muted">総合評定＝各目標の査定を難易度で重み付けした平均を四捨五入（1〜5）。</p>
+  <div class="row wrap">
+    <label class="mini-in">評定 S の下限（総合点）<input type="number" step="0.1" name="band_S" value="90"></label><label class="mini-in">評定 A の下限（総合点）<input type="number" step="0.1" name="band_A" value="80"></label><label class="mini-in">評定 B の下限（総合点）<input type="number" step="0.1" name="band_B" value="65"></label><label class="mini-in">評定 C の下限（総合点）<input type="number" step="0.1" name="band_C" value="50"></label>  </div>
+  <p class="small muted">業績点＝ウェイト×換算率÷ウェイト合計×業績点の満点／定性点＝上長の評価÷5×定性点の満点÷3（3グループすべて入力で合計）／総合点＝業績点＋定性点。C の下限未満は D。定性点が登用ライン未満なら、業績が高くても「登用保留」と表示します。</p>
+  <div class="row"><button class="btn primary">基準を保存して計算し直す</button></div>
 </section>
-<div class="row"><button class="btn primary">基準を保存する</button></div>
 </form>
-</main>
-<dialog id="confirm" class="dlg">
-  <form method="dialog">
-    <p class="dlg-msg"></p>
-    <div class="dlg-reason" hidden>
-      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
-      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
-      <small class="count" data-count-for="dlg-reason-input"></small>
-    </div>
-    <div class="dlg-actions">
-      <button value="cancel" class="btn ghost">もどる</button>
-      <button value="ok" class="btn primary dlg-ok">提出する</button>
-    </div>
-  </form>
-</dialog>
-</body>
-</html>
+
+<form method="post" class="stack"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="qual">
+<section class="card">
+  <h2 class="h2">定性評価の物差し</h2>
+  <p class="small">3グループ×3項目。考課シートの「見るポイント」と、5点・3点・1点の目安として表示されます。性格ではなく『行動の事実』で書いてください。</p>
+    <fieldset class="qual-edit">
+    <legend>①</legend>
+    <div class="fld"><label for="g0_name">グループ名</label><input id="g0_name" name="g0_name" value="人への姿勢" maxlength="30" required></div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g0_0_0">項目名</label>
+          <input id="g0_0_0" name="g0_0_0" value="元気な挨拶" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g0_0_1">見るポイント（行動の定義）</label>
+          <textarea id="g0_0_1" name="g0_0_1" rows="2" maxlength="120">自分から先に、相手を見て、聞こえる声で挨拶する</textarea></div>
+              <div class="fld"><label for="g0_0_2">5点：周りの手本</label>
+          <textarea id="g0_0_2" name="g0_0_2" rows="2" maxlength="120">誰に対しても毎日自分から先に挨拶し、周りの挨拶の声も引き出している</textarea></div>
+              <div class="fld"><label for="g0_0_3">3点：期待水準（標準）</label>
+          <textarea id="g0_0_3" name="g0_0_3" rows="2" maxlength="120">自分から挨拶することが多いが、忙しい時や苦手な相手には声が小さくなる</textarea></div>
+              <div class="fld"><label for="g0_0_4">1点：これから伸ばす段階</label>
+          <textarea id="g0_0_4" name="g0_0_4" rows="2" maxlength="120">声をかけられて初めて挨拶する／挨拶しない日がある</textarea></div>
+          </div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g0_1_0">項目名</label>
+          <input id="g0_1_0" name="g0_1_0" value="礼節" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g0_1_1">見るポイント（行動の定義）</label>
+          <textarea id="g0_1_1" name="g0_1_1" rows="2" maxlength="120">言葉遣い・身だしなみ・時間・約束を守り、相手に敬意を示す</textarea></div>
+              <div class="fld"><label for="g0_1_2">5点：周りの手本</label>
+          <textarea id="g0_1_2" name="g0_1_2" rows="2" maxlength="120">相手と場面に応じた言葉遣いと身だしなみが徹底され、遅刻・期限遅れがなく後輩の手本になっている</textarea></div>
+              <div class="fld"><label for="g0_1_3">3点：期待水準（標準）</label>
+          <textarea id="g0_1_3" name="g0_1_3" rows="2" maxlength="120">概ね守れているが、気の緩む場面で言葉遣いや時間が乱れることがある</textarea></div>
+              <div class="fld"><label for="g0_1_4">1点：これから伸ばす段階</label>
+          <textarea id="g0_1_4" name="g0_1_4" rows="2" maxlength="120">言葉遣い・身だしなみ・時間について、何度か注意を受けている</textarea></div>
+          </div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g0_2_0">項目名</label>
+          <input id="g0_2_0" name="g0_2_0" value="笑顔の交流" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g0_2_1">見るポイント（行動の定義）</label>
+          <textarea id="g0_2_1" name="g0_2_1" rows="2" maxlength="120">お客様・仲間と、笑顔で話す機会を自分から作る</textarea></div>
+              <div class="fld"><label for="g0_2_2">5点：周りの手本</label>
+          <textarea id="g0_2_2" name="g0_2_2" rows="2" maxlength="120">自分から笑顔で話しかけ、お客様や仲間との会話を増やし、職場の雰囲気を明るくしている</textarea></div>
+              <div class="fld"><label for="g0_2_3">3点：期待水準（標準）</label>
+          <textarea id="g0_2_3" name="g0_2_3" rows="2" maxlength="120">話しかけられれば笑顔で応じ、自分からも時々声をかける</textarea></div>
+              <div class="fld"><label for="g0_2_4">1点：これから伸ばす段階</label>
+          <textarea id="g0_2_4" name="g0_2_4" rows="2" maxlength="120">表情が硬く、必要最低限の会話にとどまる</textarea></div>
+          </div>
+      </fieldset>
+    <fieldset class="qual-edit">
+    <legend>②</legend>
+    <div class="fld"><label for="g1_name">グループ名</label><input id="g1_name" name="g1_name" value="心のあり方" maxlength="30" required></div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g1_0_0">項目名</label>
+          <input id="g1_0_0" name="g1_0_0" value="素直" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g1_0_1">見るポイント（行動の定義）</label>
+          <textarea id="g1_0_1" name="g1_0_1" rows="2" maxlength="120">助言・指摘をまず受け止め、すぐ試して行動に反映する</textarea></div>
+              <div class="fld"><label for="g1_0_2">5点：周りの手本</label>
+          <textarea id="g1_0_2" name="g1_0_2" rows="2" maxlength="120">指摘に感謝して受け止め、その日・その週のうちに行動を変え、結果まで報告する</textarea></div>
+              <div class="fld"><label for="g1_0_3">3点：期待水準（標準）</label>
+          <textarea id="g1_0_3" name="g1_0_3" rows="2" maxlength="120">指摘は受け止めるが、行動に移すまで時間がかかる、または一部にとどまる</textarea></div>
+              <div class="fld"><label for="g1_0_4">1点：これから伸ばす段階</label>
+          <textarea id="g1_0_4" name="g1_0_4" rows="2" maxlength="120">指摘に対して言い訳や反論が先に出て、同じ注意を繰り返し受けている</textarea></div>
+          </div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g1_1_0">項目名</label>
+          <input id="g1_1_0" name="g1_1_0" value="前向き" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g1_1_1">見るポイント（行動の定義）</label>
+          <textarea id="g1_1_1" name="g1_1_1" rows="2" maxlength="120">困難や変化に「どうすればできるか」から考えて動く</textarea></div>
+              <div class="fld"><label for="g1_1_2">5点：周りの手本</label>
+          <textarea id="g1_1_2" name="g1_1_2" rows="2" maxlength="120">問題が起きた時に自ら解決策を考えて提案し、周りも前向きにしている</textarea></div>
+              <div class="fld"><label for="g1_1_3">3点：期待水準（標準）</label>
+          <textarea id="g1_1_3" name="g1_1_3" rows="2" maxlength="120">指示されれば前向きに取り組むが、自分からの提案は少ない</textarea></div>
+              <div class="fld"><label for="g1_1_4">1点：これから伸ばす段階</label>
+          <textarea id="g1_1_4" name="g1_1_4" rows="2" maxlength="120">「難しい」「自分には合わない」が先に出て、変化や新しい仕事に消極的</textarea></div>
+          </div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g1_2_0">項目名</label>
+          <input id="g1_2_0" name="g1_2_0" value="感謝報恩" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g1_2_1">見るポイント（行動の定義）</label>
+          <textarea id="g1_2_1" name="g1_2_1" rows="2" maxlength="120">受けた恩に感謝を言葉と行動で返し、周りに還元する</textarea></div>
+              <div class="fld"><label for="g1_2_2">5点：周りの手本</label>
+          <textarea id="g1_2_2" name="g1_2_2" rows="2" maxlength="120">「ありがとう」を具体的に伝え、受けた支援を後輩・お客様・仲間への行動で返している</textarea></div>
+              <div class="fld"><label for="g1_2_3">3点：期待水準（標準）</label>
+          <textarea id="g1_2_3" name="g1_2_3" rows="2" maxlength="120">お礼は伝えるが、行動で返す場面は限られる</textarea></div>
+              <div class="fld"><label for="g1_2_4">1点：これから伸ばす段階</label>
+          <textarea id="g1_2_4" name="g1_2_4" rows="2" maxlength="120">お礼の言葉が少なく、してもらうことを当然と受け止める場面が目立つ</textarea></div>
+          </div>
+      </fieldset>
+    <fieldset class="qual-edit">
+    <legend>③</legend>
+    <div class="fld"><label for="g2_name">グループ名</label><input id="g2_name" name="g2_name" value="仕事への姿勢" maxlength="30" required></div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g2_0_0">項目名</label>
+          <input id="g2_0_0" name="g2_0_0" value="責任感" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g2_0_1">見るポイント（行動の定義）</label>
+          <textarea id="g2_0_1" name="g2_0_1" rows="2" maxlength="120">任された仕事を最後までやり切り、問題は自分事として報告・対応する</textarea></div>
+              <div class="fld"><label for="g2_0_2">5点：周りの手本</label>
+          <textarea id="g2_0_2" name="g2_0_2" rows="2" maxlength="120">約束を必ず守り、問題は自分から早く報告し、他人任せにせず解決まで責任を持つ</textarea></div>
+              <div class="fld"><label for="g2_0_3">3点：期待水準（標準）</label>
+          <textarea id="g2_0_3" name="g2_0_3" rows="2" maxlength="120">概ね最後までやり切るが、期限ぎりぎりや報告の遅れが時々ある</textarea></div>
+              <div class="fld"><label for="g2_0_4">1点：これから伸ばす段階</label>
+          <textarea id="g2_0_4" name="g2_0_4" rows="2" maxlength="120">途中で止まる、ミスを他の人や環境のせいにする、報告が遅れることがある</textarea></div>
+          </div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g2_1_0">項目名</label>
+          <input id="g2_1_0" name="g2_1_0" value="向上心" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g2_1_1">見るポイント（行動の定義）</label>
+          <textarea id="g2_1_1" name="g2_1_1" rows="2" maxlength="120">自分から学び、仕事のやり方とスキルを高める</textarea></div>
+              <div class="fld"><label for="g2_1_2">5点：周りの手本</label>
+          <textarea id="g2_1_2" name="g2_1_2" rows="2" maxlength="120">自分から学び（本・研修・先輩への質問）、学んだことを仕事に取り入れて成果に出している</textarea></div>
+              <div class="fld"><label for="g2_1_3">3点：期待水準（標準）</label>
+          <textarea id="g2_1_3" name="g2_1_3" rows="2" maxlength="120">勧められた研修や学習には取り組む</textarea></div>
+              <div class="fld"><label for="g2_1_4">1点：これから伸ばす段階</label>
+          <textarea id="g2_1_4" name="g2_1_4" rows="2" maxlength="120">現状に満足し、学びや改善の行動が見られない</textarea></div>
+          </div>
+        <div class="form-grid qual-row">
+              <div class="fld"><label for="g2_2_0">項目名</label>
+          <input id="g2_2_0" name="g2_2_0" value="一生懸命" maxlength="30" required>
+          </div>
+              <div class="fld"><label for="g2_2_1">見るポイント（行動の定義）</label>
+          <textarea id="g2_2_1" name="g2_2_1" rows="2" maxlength="120">自分の持ち場で手を抜かず、全力で取り組む姿勢が周りに見える</textarea></div>
+              <div class="fld"><label for="g2_2_2">5点：周りの手本</label>
+          <textarea id="g2_2_2" name="g2_2_2" rows="2" maxlength="120">忙しい時も、見られていない場所でも手を抜かず、周りが「この人には負けない」と感じる</textarea></div>
+              <div class="fld"><label for="g2_2_3">3点：期待水準（標準）</label>
+          <textarea id="g2_2_3" name="g2_2_3" rows="2" maxlength="120">普段は真面目に取り組むが、取り組みに波がある</textarea></div>
+              <div class="fld"><label for="g2_2_4">1点：これから伸ばす段階</label>
+          <textarea id="g2_2_4" name="g2_2_4" rows="2" maxlength="120">指示された最低限にとどまり、周りから「やる気が見えない」と言われる</textarea></div>
+          </div>
+      </fieldset>
+    <div class="row wrap"><button class="btn primary">物差しを保存する</button></div>
+</section>
+</form>
+<form method="post"><input type="hidden" name="csrf" value=""><input type="hidden" name="op" value="qual_reset">
+  <button class="btn ghost sm" data-confirm-simple="定性評価の物差しを初期値（考課シート v6 の内容）に戻しますか？">物差しを初期値に戻す</button>
+</form>
+</main>
+<dialog id="confirm" class="dlg">
+  <form method="dialog">
+    <p class="dlg-msg"></p>
+    <div class="dlg-reason" hidden>
+      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
+      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
+      <small class="count" data-count-for="dlg-reason-input"></small>
+    </div>
+    <div class="dlg-actions">
+      <button value="cancel" class="btn ghost">もどる</button>
+      <button value="ok" class="btn primary dlg-ok">提出する</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>

@@ -45,3 +45,6 @@ h2 { font-size: 14pt; margin: 12pt 0 4pt; padding: 3pt 10pt; color: #fff; backgr
   .no-print { display: none !important; }
   .psheet { padding: 0; max-width: none; }
 }
+.pt .big { font-size: 18pt; }
+.stamps-print { margin-top: 10pt; }
+.stamps-print td { height: 40pt; vertical-align: middle; }

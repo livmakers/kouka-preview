@@ -100,27 +100,47 @@
     return el.value;
   }
 
+  function setText(sel, v, empty) {
+    $$(sel).forEach(function (e) { e.textContent = (v === null || v === undefined || v === '') ? (empty === undefined ? '―' : empty) : v; });
+  }
+  function grade(g) {
+    return g ? '<span class="grade g-' + esc(g) + '" role="img" aria-label="総合評定' + esc(g) + '">' + esc(g) + '</span>' : '<span class="grade none">―</span>';
+  }
+  function tips(list) {
+    return (list && list.length)
+      ? list.slice(0, 3).map(function (c) { return '<li class="' + esc(c.level) + '">' + esc(c.text) + '</li>'; }).join('')
+      : '<li class="muted">書き始めると、ここにヒントが出ます。</li>';
+  }
   function applyEval(ev) {
     if (!ev) return;
     Object.keys(ev.items).forEach(function (k) {
       var it = ev.items[k];
-      var d = $('[data-diff="' + k + '"]');
-      if (d) d.innerHTML = it.difficulty === null ? '<span class="pending">未選択</span>' : stars(it.difficulty, '難易度');
-      var r = $('[data-reason="' + k + '"]'); if (r) r.textContent = it.reason || '';
+      setText('[data-weight="' + k + '"]', it.weight);
+      setText('[data-points="' + k + '"]', it.points);
+      setText('[data-points-self="' + k + '"]', it.points_self);
+      var sw = $('[data-points-self-wrap="' + k + '"]'); if (sw) sw.hidden = !(it.points === null && it.points_self !== null);
       var gw = $('[data-gap-warn="' + k + '"]'); if (gw) gw.hidden = !it.gap_note_needed;
-      var html = (it.checks && it.checks.length)
-        ? it.checks.slice(0, 3).map(function (c) { return '<li class="' + esc(c.level) + '">' + esc(c.text) + '</li>'; }).join('')
-        : '<li class="muted">書き始めると、ここにヒントが出ます。</li>';
-      $$('[data-checks="' + k + '"], [data-checks-final="' + k + '"]').forEach(function (u) { u.innerHTML = html; });
-      var rate = $('[data-rate="' + k + '"]'); if (rate) rate.textContent = it.rate === null ? '―' : it.rate + '%';
-      var a = $('[data-assess="' + k + '"]'); if (a) a.innerHTML = stars(it.assess, 'AI査定');
-      var ar = $('[data-assess-reason="' + k + '"]'); if (ar) ar.textContent = it.assess_reason || '';
+      $$('[data-checks="' + k + '"], [data-checks-final="' + k + '"]').forEach(function (u) { u.innerHTML = tips(it.checks); });
       var adv = $('[data-advice="' + k + '"]');
       if (adv) { adv.hidden = !it.advice; var p = adv.querySelector('p:last-child'); if (p) p.textContent = it.advice || ''; }
     });
-    var o = $('[data-overall]'); if (o) o.innerHTML = stars(ev.overall, 'AI総合評定');
-    var oc = $('[data-overall-comment]'); if (oc) oc.textContent = ev.overall_comment || '期末の振り返りを書くと、ここに表示されます。';
-    var oa = $('[data-overall-advice]'); if (oa) oa.textContent = ev.overall_advice || '';
+    Object.keys(ev.qual || {}).forEach(function (k) { setText('[data-qpoints="' + k + '"]', ev.qual[k].points); });
+    var qc = $('[data-qual-checks]'); if (qc) qc.innerHTML = ev.qual_checks && ev.qual_checks.length ? tips(ev.qual_checks) : '';
+    setText('[data-perf], [data-perf2]', ev.perf);
+    setText('[data-perf-self]', ev.perf_self);
+    var ps = $('[data-perf-self-wrap]'); if (ps) ps.hidden = !(ev.perf === '' && ev.perf_self !== '');
+    setText('[data-qual], [data-qual2]', ev.qual_score);
+    setText('[data-qual-self]', ev.qual_self);
+    var qs = $('[data-qual-self-wrap]'); if (qs) qs.hidden = !(ev.qual_score === '' && ev.qual_self !== '');
+    setText('[data-total]', ev.total);
+    var g = $('[data-grade]'); if (g) g.innerHTML = grade(ev.grade);
+    var pr = $('[data-promo]');
+    if (pr) {
+      pr.textContent = '昇進・役職登用の判定：' + ev.promo_label;
+      pr.classList.toggle('hold', ev.promo === false);
+      pr.classList.toggle('ok', ev.promo === true);
+    }
+    setText('[data-overall-comment]', ev.overall_comment, '');
   }
 
   function showErrors(errors) {

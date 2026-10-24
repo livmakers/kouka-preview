@@ -1,235 +1,267 @@
-<!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<meta name="referrer" content="same-origin">
-<title>考課表 橋本 千尋｜考課管理</title>
-<link rel="stylesheet" href="assets/app.css?v=6">
-<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="same-origin">
+<title>考課シート 鈴木 蓮｜考課管理</title>
+<link rel="stylesheet" href="assets/app.css?v=8">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/preview.css"><script src="assets/preview.js" defer></script>
-<script src="assets/app.js?v=6" defer></script>
-</head>
-<body class="app"><div class="preview-bar" role="note"><a href="board.html">画面一覧</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
-<header class="top">
-  <a class="brand" href="hr-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
-  <nav class="nav" aria-label="メインメニュー">
-    <a href="hr-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
-    <a href="hr-own-sheet.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
-              <a href="hr-list.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
-      <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
-        <a href="admin.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
-  </nav>
-  <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">山崎 陸さん</span>
-    <button type="submit" class="btn ghost sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5.5A1.5 1.5 0 0 0 12.5 4h-6A1.5 1.5 0 0 0 5 5.5v13A1.5 1.5 0 0 0 6.5 20h6a1.5 1.5 0 0 0 1.5-1.5V17M10 12h10M17 9l3 3-3 3"/></svg><span>ログアウト</span></button>
-  </form>
-</header>
-<main class="main" id="main">
-<form id="sheet" class="sheet" data-sheet-id="290" data-version="3"
+<script src="assets/app.js?v=7" defer></script>
+</head>
+<body class="app"><div class="preview-bar" role="note"><a href="board.html">画面一覧</a><span>社内確認用の画面写し（架空のデモデータ）。入力・提出・出力は動きません。</span></div>
+<header class="top">
+  <a class="brand" href="hr-home.html"><span class="logo" aria-hidden="true"></span>考課管理</a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="hr-home.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"/></svg><span>ホーム</span></a>
+    <a href="hr-own-sheet.html" class="on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="3"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg><span>考課表</span></a>
+              <a href="hr-list.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M7.5 10h4M7.5 13.5h7M15.5 9.5l1 1 2-2"/></svg><span>人事</span></a>
+      <a href="hr-stats.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5V11M10 19.5V6M15 19.5v-6M20 19.5V9"/></svg><span>集計</span></a>
+        <a href="admin.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M6 18l1.6-1.6M16.4 7.6 18 6"/></svg><span>管理</span></a>    <a href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.5 1.5H5z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span>通知</span></a>
+  </nav>
+  <form method="post" action="#preview-off" class="logout"><input type="hidden" name="csrf" value="">    <span class="who">山崎 陸さん</span>
+    <button type="submit" class="btn ghost sm"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5.5A1.5 1.5 0 0 0 12.5 4h-6A1.5 1.5 0 0 0 5 5.5v13A1.5 1.5 0 0 0 6.5 20h6a1.5 1.5 0 0 0 1.5-1.5V17M10 12h10M17 9l3 3-3 3"/></svg><span>ログアウト</span></button>
+  </form>
+</header>
+<main class="main" id="main">
+<form id="sheet" class="sheet" data-sheet-id="397" data-version="3"
       data-save-url="?r=save" data-consult-url="?r=consult" data-answer-url="?r=consult_answer"
       data-prompt-url="?r=prompt" data-csrf="" data-editable="0">
 
 <section class="card sheet-head">
   <div class="row-between wrap">
-    <div><p class="eyebrow">目標管理シート</p><h1 class="h2">橋本 千尋さん　2026年度 下期</h1></div>
-    <div class="row wrap"><span class="badge done">人事提出済（期初確定）</span><span class="save-state" data-save-state aria-live="polite"></span></div>
+    <div><p class="eyebrow">アクションプランと反省（考課シート）　業績考課＋定性評価</p><h1 class="h2">鈴木 蓮さん　2026年度 上期</h1></div>
+    <div class="row wrap"><span class="badge done">人事提出済（期末確定）</span><span class="save-state" data-save-state aria-live="polite"></span></div>
   </div>
-  <p class="legend"><span class="sw input"></span>記入欄　<span class="sw auto"></span>自動計算・チェック欄（入力不要）</p>
-      <p class="note soft">人事として閲覧しています。</p>
-      <div class="conflict" data-conflict hidden role="alert"></div>
+  <p class="legend"><span class="sw input"></span>記入欄（◇は選択式）　<span class="sw auto"></span>自動計算欄（入力不要）　提出：本人→上長→人事</p>
+      <p class="note soft">全社の立場で閲覧しています。</p>
+        <div class="conflict" data-conflict hidden role="alert"></div>
   <div class="row wrap tools">
     <a class="btn ghost sm" href="#preview-off"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/></svg>Excel</a>
-    <a class="btn ghost sm" href="#preview-off" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 17H5a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 5 9h14a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 19 17h-2"/><rect x="7" y="14" width="10" height="6" rx="1.5"/></svg>印刷・PDF</a>
+    <a class="btn ghost sm" href="print-sheet.html" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 17H5a1.5 1.5 0 0 1-1.5-1.5v-5A1.5 1.5 0 0 1 5 9h14a1.5 1.5 0 0 1 1.5 1.5v5A1.5 1.5 0 0 1 19 17h-2"/><rect x="7" y="14" width="10" height="6" rx="1.5"/></svg>印刷・PDF</a>
   </div>
 </section>
 
 <section class="card">
   <h2 class="sec">基本情報</h2>
   <dl class="basic">
-    <div><dt>氏名</dt><dd>橋本 千尋</dd></div>
+    <div><dt>対象期間</dt><dd>2026年度 上期<small class="muted">（2026-04-01〜2026-09-30）</small></dd></div>
+    <div><dt>店舗・課</dt><dd>本店 販売部</dd></div>
+    <div><dt>社員番号</dt><dd>M010</dd></div>
+    <div><dt>氏名</dt><dd>鈴木 蓮</dd></div>
+    <div><dt>役職</dt><dd>課長</dd></div>
+    <div><dt>上長</dt><dd>佐藤 陽菜</dd></div>
     <div><dt>会社</dt><dd>三河屋</dd></div>
-    <div><dt>役職</dt><dd>主任</dd></div>
-    <div><dt>評価期間</dt><dd>2026-10-01〜2027-03-31</dd></div>
-    <div><dt>部署</dt><dd>本部 販売部</dd></div>
-    <div><dt>上長名</dt><dd>池田 直樹</dd></div>
-    <div><dt>社員番号</dt><dd>T011</dd></div>
-    <div><dt>提出日</dt><dd>2026-10-08</dd></div>
+    <div><dt>提出日</dt><dd>2026-04-14</dd></div>
     <div class="dd-field"><dt><label for="f_interview_date">面談日</label></dt>
-      <dd>2026-10-10</dd></div>
+      <dd>2026-04-24</dd></div>
   </dl>
 </section>
 
 <section class="card">
-  <h2 class="sec">① 個人の成長目標<small>（最大3件）何ができるようになるか／どんな状態になるか</small></h2>
-    <article class="item" id="item-g0">
+  <h2 class="sec">Ⅰ　業績考課（70点満点）<small>＜期首アクションプラン＞</small></h2>
+  <p class="small">これからの半年で「出来る様になる」「達成させる」行動計画（アクションプラン）を記入してください（提出期限：2026-04-30）。</p>
+    <article class="item" id="item-p0">
     <div class="item-main">
-      <p class="item-no">成長目標 1</p>
-      <div class="r-main-date">
-        <div class="fld fld-text"><label for="f_growth_0_goal">成長目標<small>どうなりたいか</small></label><div class="ro" id="f_growth_0_goal">新規取引先への提案力を高める</div></div>        <div class="fld fld-date"><label for="f_growth_0_deadline">期限</label><div class="ro" id="f_growth_0_deadline">2027-03-31</div></div>      </div>
-      <div class="r-half">
-        <div class="fld fld-area"><label for="f_growth_0_plan">具体的な行動計画<small>いつ・何を・どのように</small></label><div class="ro" id="f_growth_0_plan">毎月2社へ提案書を作成し、上長レビューを受ける。社内勉強会へ月1回参加する。</div></div>        <div class="fld fld-area"><label for="f_growth_0_criteria">達成の判定基準<small>誰が見ても分かる状態・件数</small></label><div class="ro" id="f_growth_0_criteria">提案書12件提出、うち3件が商談化</div></div>      </div>
-          </div>
-    <aside class="item-side"><div class="diff-box"><p class="ai-h">難易度</p><div data-diff="g0"><span class="stars" role="img" aria-label="難易度2（5段階）"><b>2</b><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></div><p class="reason" data-reason="g0">本人が選んだ難易度</p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="g0"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div></aside>  </article>
-    <article class="item" id="item-g1">
+      <p class="item-no">アクションプラン ①</p>
+      <div class="fld fld-area"><label for="f_plans_0_text">行動計画<small>何を・いつまでに・どこまで</small></label><div class="ro" id="f_plans_0_text">担当部門の月間売上1,200万円を目標とし、週末の試食販売で客数を伸ばす</div></div>          </div>
+    <aside class="item-side"><div class="diff-box"><div class="fld fld-lv"><label for="f_plans_0_diff_self">難易度（本人）</label><div class="ro" id="f_plans_0_diff_self"><b class="lv">Lv1</b></div></div><div class="fld fld-lv"><label for="f_plans_0_diff_mgr">難易度（上長）</label><div class="ro" id="f_plans_0_diff_mgr"><span class="muted">―</span></div></div><p class="wt">ウェイト（自動）<b data-weight="p0">1</b></p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="p0"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div></aside>  </article>
+    <article class="item" id="item-p1">
     <div class="item-main">
-      <p class="item-no">成長目標 2</p>
-      <div class="r-main-date">
-        <div class="fld fld-text"><label for="f_growth_1_goal">成長目標<small>どうなりたいか</small></label><div class="ro" id="f_growth_1_goal">見積りを早く正確に出せるようになる</div></div>        <div class="fld fld-date"><label for="f_growth_1_deadline">期限</label><div class="ro" id="f_growth_1_deadline">2027-03-31</div></div>      </div>
-      <div class="r-half">
-        <div class="fld fld-area"><label for="f_growth_1_plan">具体的な行動計画<small>いつ・何を・どのように</small></label><div class="ro" id="f_growth_1_plan">毎週金曜に見積りの型を見直し、課長に確認してもらう。</div></div>        <div class="fld fld-area"><label for="f_growth_1_criteria">達成の判定基準<small>誰が見ても分かる状態・件数</small></label><div class="ro" id="f_growth_1_criteria">見積り提出までの日数を平均2日以内</div></div>      </div>
-          </div>
-    <aside class="item-side"><div class="diff-box"><p class="ai-h">難易度</p><div data-diff="g1"><span class="stars" role="img" aria-label="難易度2（5段階）"><b>2</b><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></div><p class="reason" data-reason="g1">本人が選んだ難易度</p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="g1"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div></aside>  </article>
-    <article class="item" id="item-g2">
+      <p class="item-no">アクションプラン ②</p>
+      <div class="fld fld-area"><label for="f_plans_1_text">行動計画<small>何を・いつまでに・どこまで</small></label><div class="ro" id="f_plans_1_text">廃棄ロス率を4.2%から3.6%へ下げる。毎朝15分の売場チェックで値引き判断を早める</div></div>          </div>
+    <aside class="item-side"><div class="diff-box"><div class="fld fld-lv"><label for="f_plans_1_diff_self">難易度（本人）</label><div class="ro" id="f_plans_1_diff_self"><b class="lv">Lv2</b></div></div><div class="fld fld-lv"><label for="f_plans_1_diff_mgr">難易度（上長）</label><div class="ro" id="f_plans_1_diff_mgr"><span class="muted">―</span></div></div><p class="wt">ウェイト（自動）<b data-weight="p1">2</b></p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="p1"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div></aside>  </article>
+    <article class="item" id="item-p2">
     <div class="item-main">
-      <p class="item-no">成長目標 3</p>
-      <div class="r-main-date">
-        <div class="fld fld-text"><label for="f_growth_2_goal">成長目標<small>どうなりたいか</small></label><div class="ro" id="f_growth_2_goal">後輩の育成に関われるようになる</div></div>        <div class="fld fld-date"><label for="f_growth_2_deadline">期限</label><div class="ro" id="f_growth_2_deadline">2027-03-31</div></div>      </div>
-      <div class="r-half">
-        <div class="fld fld-area"><label for="f_growth_2_plan">具体的な行動計画<small>いつ・何を・どのように</small></label><div class="ro" id="f_growth_2_plan">月1回、後輩の商談に同行し、振り返りを一緒に行う。</div></div>        <div class="fld fld-area"><label for="f_growth_2_criteria">達成の判定基準<small>誰が見ても分かる状態・件数</small></label><div class="ro" id="f_growth_2_criteria">後輩1名が単独で受注2件</div></div>      </div>
-          </div>
-    <aside class="item-side"><div class="diff-box"><p class="ai-h">難易度</p><div data-diff="g2"><span class="stars" role="img" aria-label="難易度3（5段階）"><b>3</b><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></div><p class="reason" data-reason="g2">本人が選んだ難易度</p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="g2"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div></aside>  </article>
-  </section>
+      <p class="item-no">アクションプラン ③</p>
+      <div class="fld fld-area"><label for="f_plans_2_text">行動計画<small>何を・いつまでに・どこまで</small></label><div class="ro" id="f_plans_2_text">新人スタッフ2名に接客と品出しを教え、9月までに一人で売場を任せられる状態にする</div></div>          </div>
+    <aside class="item-side"><div class="diff-box"><div class="fld fld-lv"><label for="f_plans_2_diff_self">難易度（本人）</label><div class="ro" id="f_plans_2_diff_self"><b class="lv">Lv1</b></div></div><div class="fld fld-lv"><label for="f_plans_2_diff_mgr">難易度（上長）</label><div class="ro" id="f_plans_2_diff_mgr"><span class="muted">―</span></div></div><p class="wt">ウェイト（自動）<b data-weight="p2">1</b></p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="p2"><li class="tip">「次にどうするか」を一言加えると、次期のアクションプランにつながります。</li></ul></div></aside>  </article>
+    <article class="item" id="item-p3">
+    <div class="item-main">
+      <p class="item-no">アクションプラン ④</p>
+      <div class="fld fld-area"><label for="f_plans_3_text">行動計画<small>何を・いつまでに・どこまで</small></label><div class="ro" id="f_plans_3_text">担当棚12か所の売場づくりを毎週1か所ずつ見直し、店長に写真で報告する</div></div>          </div>
+    <aside class="item-side"><div class="diff-box"><div class="fld fld-lv"><label for="f_plans_3_diff_self">難易度（本人）</label><div class="ro" id="f_plans_3_diff_self"><b class="lv">Lv3</b></div></div><div class="fld fld-lv"><label for="f_plans_3_diff_mgr">難易度（上長）</label><div class="ro" id="f_plans_3_diff_mgr"><b class="lv">Lv2</b></div></div><p class="wt">ウェイト（自動）<b data-weight="p3">2</b></p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="p3"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div></aside>  </article>
+    <article class="item" id="item-p4">
+    <div class="item-main">
+      <p class="item-no">アクションプラン ⑤</p>
+      <div class="fld fld-area"><label for="f_plans_4_text">行動計画<small>何を・いつまでに・どこまで</small></label><div class="ro" id="f_plans_4_text">お客様アンケートの満足回答率を82%から88%へ。朝礼で声かけを毎日確認する</div></div>          </div>
+    <aside class="item-side"><div class="diff-box"><div class="fld fld-lv"><label for="f_plans_4_diff_self">難易度（本人）</label><div class="ro" id="f_plans_4_diff_self"><b class="lv">Lv1</b></div></div><div class="fld fld-lv"><label for="f_plans_4_diff_mgr">難易度（上長）</label><div class="ro" id="f_plans_4_diff_mgr"><span class="muted">―</span></div></div><p class="wt">ウェイト（自動）<b data-weight="p4">1</b></p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="p4"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div></aside>  </article>
+    <p class="small muted">難易度：Lv0 目標達成も、何も変化が起きない／Lv1 目標達成で、自身のレベルアップが出来る取り組み／Lv2 目標達成で、自部門のレベルアップが出来る取り組み／Lv3 困難な目標だが、大きく自部門がレベルアップする取り組み／Lv4 困難な目標だが、大きく会社がレベルアップする取り組み</p>
+  <div class="fld fld-area"><label for="f_mgr_goal_comment">上長コメント（アクションプランへの助言）</label><div class="ro" id="f_mgr_goal_comment">数字の置き方が具体的で良いです。月1回、進み具合を一緒に確認しましょう。</div></div></section>
 
-<section class="card">
-  <h2 class="sec">② 数値目標<small>（最大3件）売上・粗利・件数・時間など、数字で測れるもの</small></h2>
-    <article class="item" id="item-n0">
+<section class="card ">
+  <h2 class="sec">＜期末結果と反省＞</h2>
+    <p class="small">上記プランに対しての「何をして」「結果どうだったのか」又は「次にどうするのか」を記入してください。</p>
+    <article class="item">
     <div class="item-main">
-      <p class="item-no">数値目標 1</p>
-      <div class="r-main-date">
-        <div class="fld fld-text"><label for="f_numeric_0_name">数値目標の指標名</label><div class="ro" id="f_numeric_0_name">担当エリアの月間売上</div></div>        <div class="fld fld-date"><label for="f_numeric_0_deadline">期限</label><div class="ro" id="f_numeric_0_deadline">2027-03-31</div></div>      </div>
-      <div class="fld fld-area"><label for="f_numeric_0_measure">達成のための主な施策</label><div class="ro" id="f_numeric_0_measure">既存顧客を週1回訪問し、新商品を全顧客へ提案する。</div></div>      <div class="r-nums">
-        <div class="fld fld-num"><label for="f_numeric_0_prev">前期実績</label><div class="ro" id="f_numeric_0_prev">1200</div></div>        <div class="fld fld-num"><label for="f_numeric_0_target">目標値</label><div class="ro" id="f_numeric_0_target">1504.2</div></div>        <div class="fld fld-text"><label for="f_numeric_0_unit">単位</label><div class="ro" id="f_numeric_0_unit">万円/月</div></div>        <div class="fld fld-dir"><label for="f_numeric_0_dir">方向</label><div class="ro" id="f_numeric_0_dir">↑ 高いほど良い</div></div>      </div>
-          </div>
-    <aside class="item-side"><div class="diff-box"><p class="ai-h">難易度</p><div data-diff="n0"><span class="stars" role="img" aria-label="難易度5（5段階）"><b>5</b><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p class="reason" data-reason="n0">本人が選んだ難易度</p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="n0"><li class="tip">大きな挑戦です。途中に中間目標を置くと、着実に進められます。</li></ul></div></aside>  </article>
-    <article class="item" id="item-n1">
-    <div class="item-main">
-      <p class="item-no">数値目標 2</p>
-      <div class="r-main-date">
-        <div class="fld fld-text"><label for="f_numeric_1_name">数値目標の指標名</label><div class="ro" id="f_numeric_1_name">粗利率</div></div>        <div class="fld fld-date"><label for="f_numeric_1_deadline">期限</label><div class="ro" id="f_numeric_1_deadline">2027-03-31</div></div>      </div>
-      <div class="fld fld-area"><label for="f_numeric_1_measure">達成のための主な施策</label><div class="ro" id="f_numeric_1_measure">見積りの前に原価表を必ず確認し、値引きは課長に相談する。</div></div>      <div class="r-nums">
-        <div class="fld fld-num"><label for="f_numeric_1_prev">前期実績</label><div class="ro" id="f_numeric_1_prev">22</div></div>        <div class="fld fld-num"><label for="f_numeric_1_target">目標値</label><div class="ro" id="f_numeric_1_target">26.4</div></div>        <div class="fld fld-text"><label for="f_numeric_1_unit">単位</label><div class="ro" id="f_numeric_1_unit">%</div></div>        <div class="fld fld-dir"><label for="f_numeric_1_dir">方向</label><div class="ro" id="f_numeric_1_dir">↑ 高いほど良い</div></div>      </div>
-          </div>
-    <aside class="item-side"><div class="diff-box"><p class="ai-h">難易度</p><div data-diff="n1"><span class="stars" role="img" aria-label="難易度5（5段階）"><b>5</b><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p class="reason" data-reason="n1">上長が確定（本人4）：店舗の実情を考慮</p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="n1"><li class="tip">施策に「週1回」など頻度を入れると、実行しやすくなります。</li><li class="tip">大きな挑戦です。途中に中間目標を置くと、着実に進められます。</li></ul></div></aside>  </article>
-    <article class="item" id="item-n2">
-    <div class="item-main">
-      <p class="item-no">数値目標 3</p>
-      <div class="r-main-date">
-        <div class="fld fld-text"><label for="f_numeric_2_name">数値目標の指標名</label><div class="ro" id="f_numeric_2_name">納期遅延の件数</div></div>        <div class="fld fld-date"><label for="f_numeric_2_deadline">期限</label><div class="ro" id="f_numeric_2_deadline">2027-03-31</div></div>      </div>
-      <div class="fld fld-area"><label for="f_numeric_2_measure">達成のための主な施策</label><div class="ro" id="f_numeric_2_measure">受注時に製造と納期を毎回確認し、週1回進み具合を共有する。</div></div>      <div class="r-nums">
-        <div class="fld fld-num"><label for="f_numeric_2_prev">前期実績</label><div class="ro" id="f_numeric_2_prev">6</div></div>        <div class="fld fld-num"><label for="f_numeric_2_target">目標値</label><div class="ro" id="f_numeric_2_target">2.9</div></div>        <div class="fld fld-text"><label for="f_numeric_2_unit">単位</label><div class="ro" id="f_numeric_2_unit">件</div></div>        <div class="fld fld-dir"><label for="f_numeric_2_dir">方向</label><div class="ro" id="f_numeric_2_dir">↓ 低いほど良い</div></div>      </div>
-          </div>
-    <aside class="item-side"><div class="diff-box"><p class="ai-h">難易度</p><div data-diff="n2"><span class="stars" role="img" aria-label="難易度5（5段階）"><b>5</b><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div><p class="reason" data-reason="n2">上長が確定（本人5）：店舗の実情を考慮</p></div><div class="checks"><p class="ai-h">入力チェック</p><ul data-checks="n2"><li class="tip">大きな挑戦です。途中に中間目標を置くと、着実に進められます。</li></ul></div></aside>  </article>
-    <p class="small muted">方向：↑＝高いほど良い（売上など）／↓＝低いほど良い（クレーム件数・納期遅延など）。↓の指標は達成率を自動で逆算します。</p>
-</section>
-
-<section class="card">
-  <h2 class="sec">③ 目標設定に対する上長コメント<small>（上長が記入）</small></h2>
-  <div class="fld fld-area"><label for="f_mgr_goal_comment">上長コメント</label><div class="ro" id="f_mgr_goal_comment">挑戦的で良い内容です。困ったら早めに相談してください。</div></div>  <div class="two">
-    <div class="fld fld-date"><label for="f_mgr_goal_date">コメント記入日</label><div class="ro" id="f_mgr_goal_date">2026-10-12</div></div>    <div class="fld fld-text"><label for="f_mgr_goal_sign">上長署名</label><div class="ro" id="f_mgr_goal_sign">上長</div></div>  </div>
-</section>
-
-<section class="card locked">
-  <h2 class="sec">④ 期末振り返り<small>（半年後に本人が記入）事実・数字で記入してください</small></h2>
-  <p class="note soft">期末入力期間（2027-03-01〜）になると記入できます。いまは目標づくりに集中しましょう。</p>    <article class="item">
-    <div class="item-main">
-      <p class="item-no">成長目標 1：新規取引先への提案力を高める</p>
-      <div class="fld fld-area"><label for="f_review_g0_result">達成状況・具体的な成果<small>事実と数字で</small></label><div class="ro" id="f_review_g0_result"><span class="muted">―</span></div></div>      <div class="two">
-        <div class="fld fld-date"><label for="f_review_g0_done">完了日</label><div class="ro" id="f_review_g0_done"><span class="muted">―</span></div></div>              </div>
-      <div class="fld fld-score"><label for="f_review_g0_self">自己評価（1〜5）</label><div class="ro" id="f_review_g0_self"><span class="muted">―</span></div></div>    </div>
+      <p class="item-no">①　担当部門の月間売上1,200万円を目標とし、週末の試食販売で客数を伸ばす</p>
+      <div class="fld fld-area"><label for="f_results_0_text">結果と反省<small>何をして・結果どうだったか・次にどうするか</small></label><div class="ro" id="f_results_0_text">週末の試食販売を毎週実施。月間売上は1,180万円で目標に約20万円届かず。下期はおすすめ札を全商品に付けて客単価を上げる。</div></div>    </div>
     <aside class="item-side">
-      <div class="ai"><p class="ai-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/></svg>AI査定</p>
-        <div data-assess="g0"><span class="stars none" aria-label="AI査定未判定">―</span></div>
-        <p class="reason" data-assess-reason="g0"></p></div>
-      <div class="advice" data-advice="g0" hidden><p class="ai-h">次期に伸ばす一手</p><p></p></div>
-          </aside>
+      <div class="diff-box">
+        <div class="fld fld-level"><label for="f_results_0_ach_self">達成度（本人）</label><div class="ro" id="f_results_0_ach_self"><b class="lv">4点</b></div></div>        <div class="fld fld-level"><label for="f_results_0_ach_mgr">達成度（上長）</label><div class="ro" id="f_results_0_ach_mgr"><b class="lv">3点</b></div></div>        <p class="wt">業績点（自動）<b data-points="p0">9</b>
+          <small class="muted" data-points-self-wrap="p0" hidden>本人評価での見込み <span data-points-self="p0">10</span></small></p>
+      </div>
+      <div class="advice" data-advice="p0"><p class="ai-h">次期に伸ばす一手</p><p>大きな成果です。うまくいったやり方を言葉にしてチームに広げ、次期はもう一段上の難易度に挑戦してみましょう。</p></div>
+      <div class="checks"><p class="ai-h">入力チェック</p><ul data-checks-final="p0"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div>    </aside>
   </article>
     <article class="item">
     <div class="item-main">
-      <p class="item-no">成長目標 2：見積りを早く正確に出せるようになる</p>
-      <div class="fld fld-area"><label for="f_review_g1_result">達成状況・具体的な成果<small>事実と数字で</small></label><div class="ro" id="f_review_g1_result"><span class="muted">―</span></div></div>      <div class="two">
-        <div class="fld fld-date"><label for="f_review_g1_done">完了日</label><div class="ro" id="f_review_g1_done"><span class="muted">―</span></div></div>              </div>
-      <div class="fld fld-score"><label for="f_review_g1_self">自己評価（1〜5）</label><div class="ro" id="f_review_g1_self"><span class="muted">―</span></div></div>    </div>
+      <p class="item-no">②　廃棄ロス率を4.2%から3.6%へ下げる。毎朝15分の売場チェックで値引き判断を早める</p>
+      <div class="fld fld-area"><label for="f_results_1_text">結果と反省<small>何をして・結果どうだったか・次にどうするか</small></label><div class="ro" id="f_results_1_text">毎朝の売場チェックを継続し、ロス率は3.8%まで改善。下期は夕方の値引き時刻を30分早めて3.5%を目指す。</div></div>    </div>
     <aside class="item-side">
-      <div class="ai"><p class="ai-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/></svg>AI査定</p>
-        <div data-assess="g1"><span class="stars none" aria-label="AI査定未判定">―</span></div>
-        <p class="reason" data-assess-reason="g1"></p></div>
-      <div class="advice" data-advice="g1" hidden><p class="ai-h">次期に伸ばす一手</p><p></p></div>
-          </aside>
+      <div class="diff-box">
+        <div class="fld fld-level"><label for="f_results_1_ach_self">達成度（本人）</label><div class="ro" id="f_results_1_ach_self"><b class="lv">2点</b></div></div>        <div class="fld fld-level"><label for="f_results_1_ach_mgr">達成度（上長）</label><div class="ro" id="f_results_1_ach_mgr"><b class="lv">2点</b></div></div>        <p class="wt">業績点（自動）<b data-points="p1">15</b>
+          <small class="muted" data-points-self-wrap="p1" hidden>本人評価での見込み <span data-points-self="p1">15</span></small></p>
+      </div>
+      <div class="advice" data-advice="p1"><p class="ai-h">次期に伸ばす一手</p><p>目標を達成しました。次期は、周りを巻き込んで成果を広げる形（達成度3）を目指してみましょう。</p></div>
+      <div class="checks"><p class="ai-h">入力チェック</p><ul data-checks-final="p1"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div>    </aside>
   </article>
     <article class="item">
     <div class="item-main">
-      <p class="item-no">成長目標 3：後輩の育成に関われるようになる</p>
-      <div class="fld fld-area"><label for="f_review_g2_result">達成状況・具体的な成果<small>事実と数字で</small></label><div class="ro" id="f_review_g2_result"><span class="muted">―</span></div></div>      <div class="two">
-        <div class="fld fld-date"><label for="f_review_g2_done">完了日</label><div class="ro" id="f_review_g2_done"><span class="muted">―</span></div></div>              </div>
-      <div class="fld fld-score"><label for="f_review_g2_self">自己評価（1〜5）</label><div class="ro" id="f_review_g2_self"><span class="muted">―</span></div></div>    </div>
+      <p class="item-no">③　新人スタッフ2名に接客と品出しを教え、9月までに一人で売場を任せられる状態にする</p>
+      <div class="fld fld-area"><label for="f_results_2_text">結果と反省<small>何をして・結果どうだったか・次にどうするか</small></label><div class="ro" id="f_results_2_text">週1回のロールプレイを実施し、2名とも接客チェック表で80点以上。うち1名は土日の売場を一人で担当できるようになった。</div></div>    </div>
     <aside class="item-side">
-      <div class="ai"><p class="ai-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/></svg>AI査定</p>
-        <div data-assess="g2"><span class="stars none" aria-label="AI査定未判定">―</span></div>
-        <p class="reason" data-assess-reason="g2"></p></div>
-      <div class="advice" data-advice="g2" hidden><p class="ai-h">次期に伸ばす一手</p><p></p></div>
-          </aside>
+      <div class="diff-box">
+        <div class="fld fld-level"><label for="f_results_2_ach_self">達成度（本人）</label><div class="ro" id="f_results_2_ach_self"><b class="lv">3点</b></div></div>        <div class="fld fld-level"><label for="f_results_2_ach_mgr">達成度（上長）</label><div class="ro" id="f_results_2_ach_mgr"><b class="lv">3点</b></div></div>        <p class="wt">業績点（自動）<b data-points="p2">9</b>
+          <small class="muted" data-points-self-wrap="p2" hidden>本人評価での見込み <span data-points-self="p2">9</span></small></p>
+      </div>
+      <div class="advice" data-advice="p2"><p class="ai-h">次期に伸ばす一手</p><p>大きな成果です。うまくいったやり方を言葉にしてチームに広げ、次期はもう一段上の難易度に挑戦してみましょう。</p></div>
+      <div class="checks"><p class="ai-h">入力チェック</p><ul data-checks-final="p2"><li class="tip">「次にどうするか」を一言加えると、次期のアクションプランにつながります。</li></ul></div>    </aside>
   </article>
     <article class="item">
     <div class="item-main">
-      <p class="item-no">数値目標 1：担当エリアの月間売上</p>
-      <div class="fld fld-area"><label for="f_review_n0_result">達成状況・具体的な成果<small>事実と数字で</small></label><div class="ro" id="f_review_n0_result"><span class="muted">―</span></div></div>      <div class="four">
-        <div class="fld fld-date"><label for="f_review_n0_done">完了日</label><div class="ro" id="f_review_n0_done"><span class="muted">―</span></div></div>                  <div class="fld fld-num"><label for="f_review_n0_actual">実績値<small>数字のみ</small></label><div class="ro" id="f_review_n0_actual"><span class="muted">―</span></div></div>          <div class="fld"><label>達成率<small>自動</small></label><div class="ro auto" data-rate="n0">―</div></div>
-          <div class="fld"><label>単位<small>自動</small></label><div class="ro auto">万円/月</div></div>
-              </div>
-      <div class="fld fld-score"><label for="f_review_n0_self">自己評価（1〜5）</label><div class="ro" id="f_review_n0_self"><span class="muted">―</span></div></div>    </div>
+      <p class="item-no">④　担当棚12か所の売場づくりを毎週1か所ずつ見直し、店長に写真で報告する</p>
+      <div class="fld fld-area"><label for="f_results_3_text">結果と反省<small>何をして・結果どうだったか・次にどうするか</small></label><div class="ro" id="f_results_3_text">12か所すべて見直しを完了。特にお惣菜棚は前年比+8%。次は季節ごとの棚替えを自分から提案していく。</div></div>    </div>
     <aside class="item-side">
-      <div class="ai"><p class="ai-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/></svg>AI査定</p>
-        <div data-assess="n0"><span class="stars none" aria-label="AI査定未判定">―</span></div>
-        <p class="reason" data-assess-reason="n0"></p></div>
-      <div class="advice" data-advice="n0" hidden><p class="ai-h">次期に伸ばす一手</p><p></p></div>
-          </aside>
+      <div class="diff-box">
+        <div class="fld fld-level"><label for="f_results_3_ach_self">達成度（本人）</label><div class="ro" id="f_results_3_ach_self"><b class="lv">2点</b></div></div>        <div class="fld fld-level"><label for="f_results_3_ach_mgr">達成度（上長）</label><div class="ro" id="f_results_3_ach_mgr"><b class="lv">2点</b></div></div>        <p class="wt">業績点（自動）<b data-points="p3">15</b>
+          <small class="muted" data-points-self-wrap="p3" hidden>本人評価での見込み <span data-points-self="p3">15</span></small></p>
+      </div>
+      <div class="advice" data-advice="p3"><p class="ai-h">次期に伸ばす一手</p><p>目標を達成しました。次期は、周りを巻き込んで成果を広げる形（達成度3）を目指してみましょう。</p></div>
+      <div class="checks"><p class="ai-h">入力チェック</p><ul data-checks-final="p3"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div>    </aside>
   </article>
     <article class="item">
     <div class="item-main">
-      <p class="item-no">数値目標 2：粗利率</p>
-      <div class="fld fld-area"><label for="f_review_n1_result">達成状況・具体的な成果<small>事実と数字で</small></label><div class="ro" id="f_review_n1_result"><span class="muted">―</span></div></div>      <div class="four">
-        <div class="fld fld-date"><label for="f_review_n1_done">完了日</label><div class="ro" id="f_review_n1_done"><span class="muted">―</span></div></div>                  <div class="fld fld-num"><label for="f_review_n1_actual">実績値<small>数字のみ</small></label><div class="ro" id="f_review_n1_actual"><span class="muted">―</span></div></div>          <div class="fld"><label>達成率<small>自動</small></label><div class="ro auto" data-rate="n1">―</div></div>
-          <div class="fld"><label>単位<small>自動</small></label><div class="ro auto">%</div></div>
-              </div>
-      <div class="fld fld-score"><label for="f_review_n1_self">自己評価（1〜5）</label><div class="ro" id="f_review_n1_self"><span class="muted">―</span></div></div>    </div>
+      <p class="item-no">⑤　お客様アンケートの満足回答率を82%から88%へ。朝礼で声かけを毎日確認する</p>
+      <div class="fld fld-area"><label for="f_results_4_text">結果と反省<small>何をして・結果どうだったか・次にどうするか</small></label><div class="ro" id="f_results_4_text">満足回答率は86%に向上。声かけは定着したが、レジ待ちの不満が残る。下期はピーク時のレジ応援ルールを作る。</div></div>    </div>
     <aside class="item-side">
-      <div class="ai"><p class="ai-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/></svg>AI査定</p>
-        <div data-assess="n1"><span class="stars none" aria-label="AI査定未判定">―</span></div>
-        <p class="reason" data-assess-reason="n1"></p></div>
-      <div class="advice" data-advice="n1" hidden><p class="ai-h">次期に伸ばす一手</p><p></p></div>
-          </aside>
+      <div class="diff-box">
+        <div class="fld fld-level"><label for="f_results_4_ach_self">達成度（本人）</label><div class="ro" id="f_results_4_ach_self"><b class="lv">2点</b></div></div>        <div class="fld fld-level"><label for="f_results_4_ach_mgr">達成度（上長）</label><div class="ro" id="f_results_4_ach_mgr"><b class="lv">1点</b></div></div>        <p class="wt">業績点（自動）<b data-points="p4">4</b>
+          <small class="muted" data-points-self-wrap="p4" hidden>本人評価での見込み <span data-points-self="p4">7.5</span></small></p>
+      </div>
+      <div class="advice" data-advice="p4"><p class="ai-h">次期に伸ばす一手</p><p>動き出した経験は次の力になります。「時間」「やり方」「目標の大きさ」のどれが鍵だったかを切り分け、次期は週1回続けられる小さな一歩から始めましょう。</p></div>
+      <div class="checks"><p class="ai-h">入力チェック</p><ul data-checks-final="p4"><li class="good">とても具体的です。この内容で進めていきましょう。</li></ul></div>    </aside>
   </article>
-    <article class="item">
-    <div class="item-main">
-      <p class="item-no">数値目標 3：納期遅延の件数</p>
-      <div class="fld fld-area"><label for="f_review_n2_result">達成状況・具体的な成果<small>事実と数字で</small></label><div class="ro" id="f_review_n2_result"><span class="muted">―</span></div></div>      <div class="four">
-        <div class="fld fld-date"><label for="f_review_n2_done">完了日</label><div class="ro" id="f_review_n2_done"><span class="muted">―</span></div></div>                  <div class="fld fld-num"><label for="f_review_n2_actual">実績値<small>数字のみ</small></label><div class="ro" id="f_review_n2_actual"><span class="muted">―</span></div></div>          <div class="fld"><label>達成率<small>自動</small></label><div class="ro auto" data-rate="n2">―</div></div>
-          <div class="fld"><label>単位<small>自動</small></label><div class="ro auto">件</div></div>
-              </div>
-      <div class="fld fld-score"><label for="f_review_n2_self">自己評価（1〜5）</label><div class="ro" id="f_review_n2_self"><span class="muted">―</span></div></div>    </div>
-    <aside class="item-side">
-      <div class="ai"><p class="ai-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/></svg>AI査定</p>
-        <div data-assess="n2"><span class="stars none" aria-label="AI査定未判定">―</span></div>
-        <p class="reason" data-assess-reason="n2"></p></div>
-      <div class="advice" data-advice="n2" hidden><p class="ai-h">次期に伸ばす一手</p><p></p></div>
-          </aside>
-  </article>
-    <p class="small muted">【5段階の目安】難易度：1=現状維持で達成可／2=やや易しい／3=標準的な挑戦／4=高い挑戦／5=役職水準を大きく超える挑戦　査定：1=大幅未達／2=未達／3=概ね達成／4=達成／5=大幅超過達成</p>
-</section>
-
-<section class="card locked">
-  <h2 class="sec">⑤ 総合・最終コメント</h2>
-  <div class="fld fld-area"><label for="f_summary_self">本人の総括コメント</label><div class="ro" id="f_summary_self"><span class="muted">―</span></div></div>  <div class="fld fld-area"><label for="f_summary_mgr_final">上長の最終コメント</label><div class="ro" id="f_summary_mgr_final"><span class="muted">―</span></div></div>  <div class="overall">
-    <div class="ai"><p class="ai-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/></svg>AI総合評定</p><div data-overall><span class="stars none" aria-label="AI総合評定未判定">―</span></div></div>
-    <div><p class="ai-h">AI総合コメント</p><p data-overall-comment>期末の振り返りを書くと、ここに表示されます。</p>
-      <p class="advice-line" data-overall-advice></p></div>
+    <div class="total-line">
+    <span>業績点 合計（70点満点）</span><b data-perf>52</b>
+    <small class="muted" data-perf-self-wrap hidden>本人評価での見込み <span data-perf-self>56.5</span>点</small>
   </div>
-  </section>
+  <p class="small muted">達成度（採点基準）：0点 目標を著しく未達成、何もしていない／1点 アクションは起こしているが、目標に達していない／2点 アクションを起こし、目標を達成した／3点 アクションする事で回りも影響を受け、大きく目標を達成／4点 アクションが他の模範となるもので、会社のレベルアップに貢献<br>換算率：0点=0%／1点=40%／2点=75%／3点=90%／4点=100%（業績点＝ウェイト×換算率÷ウェイト合計×70点）</p>
+</section>
+
+<section class="card ">
+  <h2 class="sec">Ⅱ　定性評価（パーソナリティ）30点満点<small>性格ではなく『行動』で評価します</small></h2>
+      <article class="item">
+    <div class="item-main">
+      <p class="item-no">① 人への姿勢</p>
+      <ul class="points"><li><b>元気な挨拶</b>（自分から先に、相手を見て、聞こえる声で挨拶する）</li><li><b>礼節</b>（言葉遣い・身だしなみ・時間・約束を守り、相手に敬意を示す）</li><li><b>笑顔の交流</b>（お客様・仲間と、笑顔で話す機会を自分から作る）</li></ul>
+    </div>
+    <aside class="item-side"><div class="diff-box">
+      <div class="fld fld-score"><label for="f_qual_0_self">本人（1〜5）</label><div class="ro" id="f_qual_0_self"><span class="stars" role="img" aria-label="本人（1〜5）4（5段階）"><b>4</b><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></div></div>      <div class="fld fld-score"><label for="f_qual_0_mgr">上長（1〜5）</label><div class="ro" id="f_qual_0_mgr"><span class="stars" role="img" aria-label="上長（1〜5）3（5段階）"><b>3</b><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></div></div>      <p class="wt">得点（自動）<b data-qpoints="q0">6</b></p>
+    </div></aside>
+  </article>
+    <article class="item">
+    <div class="item-main">
+      <p class="item-no">② 心のあり方</p>
+      <ul class="points"><li><b>素直</b>（助言・指摘をまず受け止め、すぐ試して行動に反映する）</li><li><b>前向き</b>（困難や変化に「どうすればできるか」から考えて動く）</li><li><b>感謝報恩</b>（受けた恩に感謝を言葉と行動で返し、周りに還元する）</li></ul>
+    </div>
+    <aside class="item-side"><div class="diff-box">
+      <div class="fld fld-score"><label for="f_qual_1_self">本人（1〜5）</label><div class="ro" id="f_qual_1_self"><span class="stars" role="img" aria-label="本人（1〜5）3（5段階）"><b>3</b><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span></div></div>      <div class="fld fld-score"><label for="f_qual_1_mgr">上長（1〜5）</label><div class="ro" id="f_qual_1_mgr"><span class="stars" role="img" aria-label="上長（1〜5）2（5段階）"><b>2</b><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span></div></div>      <p class="wt">得点（自動）<b data-qpoints="q1">4</b></p>
+    </div></aside>
+  </article>
+    <article class="item">
+    <div class="item-main">
+      <p class="item-no">③ 仕事への姿勢</p>
+      <ul class="points"><li><b>責任感</b>（任された仕事を最後までやり切り、問題は自分事として報告・対応する）</li><li><b>向上心</b>（自分から学び、仕事のやり方とスキルを高める）</li><li><b>一生懸命</b>（自分の持ち場で手を抜かず、全力で取り組む姿勢が周りに見える）</li></ul>
+    </div>
+    <aside class="item-side"><div class="diff-box">
+      <div class="fld fld-score"><label for="f_qual_2_self">本人（1〜5）</label><div class="ro" id="f_qual_2_self"><span class="stars" role="img" aria-label="本人（1〜5）4（5段階）"><b>4</b><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></div></div>      <div class="fld fld-score"><label for="f_qual_2_mgr">上長（1〜5）</label><div class="ro" id="f_qual_2_mgr"><span class="stars" role="img" aria-label="上長（1〜5）4（5段階）"><b>4</b><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></span></div></div>      <p class="wt">得点（自動）<b data-qpoints="q2">8</b></p>
+    </div></aside>
+  </article>
+    <div class="total-line">
+    <span>定性点 合計（30点満点）※3グループ全て入力で算出　標準＝3が3つ＝18点</span><b data-qual>18</b>
+    <small class="muted" data-qual-self-wrap hidden>本人評価での見込み <span data-qual-self>22</span>点</small>
+  </div>
+  <ul class="checks-inline" data-qual-checks><li class="good">自己評価がそろいました。上長の評価と差がある項目は、面談で「見た事実」を確かめ合いましょう。</li></ul>
+  <details class="scale">
+    <summary>定性評価の物差し（5段階の目安）を見る</summary>
+    <p class="small">5＝周りの手本になっている／4＝3と5の間／3＝会社の期待水準を満たしている（標準）／2＝3と1の間／1＝これから伸ばす段階</p>
+    <p class="small">使い方：①グループごとに3項目を総合して1〜5を付ける　②「見た事実」を1つ以上コメントに書く（好き嫌いで付けない）　③本人評価と差があれば面談で事実を確認し合う</p>
+    <div class="tbl-wrap"><table class="tbl scale-tbl"><thead><tr><th>項目</th><th>見るポイント</th><th>5点：周りの手本</th><th>3点：期待水準（標準）</th><th>1点：これから伸ばす段階</th></tr></thead><tbody>
+          <tr><td data-th="項目"><b>元気な挨拶</b><small>人への姿勢</small></td><td data-th="見るポイント">自分から先に、相手を見て、聞こえる声で挨拶する</td>
+        <td data-th="5点">誰に対しても毎日自分から先に挨拶し、周りの挨拶の声も引き出している</td><td data-th="3点">自分から挨拶することが多いが、忙しい時や苦手な相手には声が小さくなる</td><td data-th="1点">声をかけられて初めて挨拶する／挨拶しない日がある</td></tr>
+          <tr><td data-th="項目"><b>礼節</b><small>人への姿勢</small></td><td data-th="見るポイント">言葉遣い・身だしなみ・時間・約束を守り、相手に敬意を示す</td>
+        <td data-th="5点">相手と場面に応じた言葉遣いと身だしなみが徹底され、遅刻・期限遅れがなく後輩の手本になっている</td><td data-th="3点">概ね守れているが、気の緩む場面で言葉遣いや時間が乱れることがある</td><td data-th="1点">言葉遣い・身だしなみ・時間について、何度か注意を受けている</td></tr>
+          <tr><td data-th="項目"><b>笑顔の交流</b><small>人への姿勢</small></td><td data-th="見るポイント">お客様・仲間と、笑顔で話す機会を自分から作る</td>
+        <td data-th="5点">自分から笑顔で話しかけ、お客様や仲間との会話を増やし、職場の雰囲気を明るくしている</td><td data-th="3点">話しかけられれば笑顔で応じ、自分からも時々声をかける</td><td data-th="1点">表情が硬く、必要最低限の会話にとどまる</td></tr>
+          <tr><td data-th="項目"><b>素直</b><small>心のあり方</small></td><td data-th="見るポイント">助言・指摘をまず受け止め、すぐ試して行動に反映する</td>
+        <td data-th="5点">指摘に感謝して受け止め、その日・その週のうちに行動を変え、結果まで報告する</td><td data-th="3点">指摘は受け止めるが、行動に移すまで時間がかかる、または一部にとどまる</td><td data-th="1点">指摘に対して言い訳や反論が先に出て、同じ注意を繰り返し受けている</td></tr>
+          <tr><td data-th="項目"><b>前向き</b><small>心のあり方</small></td><td data-th="見るポイント">困難や変化に「どうすればできるか」から考えて動く</td>
+        <td data-th="5点">問題が起きた時に自ら解決策を考えて提案し、周りも前向きにしている</td><td data-th="3点">指示されれば前向きに取り組むが、自分からの提案は少ない</td><td data-th="1点">「難しい」「自分には合わない」が先に出て、変化や新しい仕事に消極的</td></tr>
+          <tr><td data-th="項目"><b>感謝報恩</b><small>心のあり方</small></td><td data-th="見るポイント">受けた恩に感謝を言葉と行動で返し、周りに還元する</td>
+        <td data-th="5点">「ありがとう」を具体的に伝え、受けた支援を後輩・お客様・仲間への行動で返している</td><td data-th="3点">お礼は伝えるが、行動で返す場面は限られる</td><td data-th="1点">お礼の言葉が少なく、してもらうことを当然と受け止める場面が目立つ</td></tr>
+          <tr><td data-th="項目"><b>責任感</b><small>仕事への姿勢</small></td><td data-th="見るポイント">任された仕事を最後までやり切り、問題は自分事として報告・対応する</td>
+        <td data-th="5点">約束を必ず守り、問題は自分から早く報告し、他人任せにせず解決まで責任を持つ</td><td data-th="3点">概ね最後までやり切るが、期限ぎりぎりや報告の遅れが時々ある</td><td data-th="1点">途中で止まる、ミスを他の人や環境のせいにする、報告が遅れることがある</td></tr>
+          <tr><td data-th="項目"><b>向上心</b><small>仕事への姿勢</small></td><td data-th="見るポイント">自分から学び、仕事のやり方とスキルを高める</td>
+        <td data-th="5点">自分から学び（本・研修・先輩への質問）、学んだことを仕事に取り入れて成果に出している</td><td data-th="3点">勧められた研修や学習には取り組む</td><td data-th="1点">現状に満足し、学びや改善の行動が見られない</td></tr>
+          <tr><td data-th="項目"><b>一生懸命</b><small>仕事への姿勢</small></td><td data-th="見るポイント">自分の持ち場で手を抜かず、全力で取り組む姿勢が周りに見える</td>
+        <td data-th="5点">忙しい時も、見られていない場所でも手を抜かず、周りが「この人には負けない」と感じる</td><td data-th="3点">普段は真面目に取り組むが、取り組みに波がある</td><td data-th="1点">指示された最低限にとどまり、周りから「やる気が見えない」と言われる</td></tr>
+    </tbody></table></div>
+  </details>
+  <div class="fld fld-area"><label for="f_qual_comment">上長コメント（定性）<small>見た事実を1つ以上</small></label><div class="ro" id="f_qual_comment">朝の挨拶を自分から率先し、新人にも声をかけている（事実）。期限ぎりぎりの報告が月1〜2回あった。</div></div>  </section>
+
+<section class="card ">
+  <h2 class="sec">Ⅲ　総合評定</h2>
+  <div class="score-grid">
+    <div><span>業績点（70点）</span><b data-perf2>52</b></div>
+    <div><span>定性点（30点）</span><b data-qual2>18</b></div>
+    <div><span>総合点（100点）</span><b data-total>70</b></div>
+    <div class="grade-box"><span>総合評定</span><div data-grade><span class="grade g-B" role="img" aria-label="総合評定B">B</span></div></div>
+  </div>
+  <p class="promo ok" data-promo>昇進・役職登用の判定：登用可（定性点クリア）</p>
+  <p class="small muted" data-overall-comment>総合70点（100点中）で評定B。業績52点・定性18点。目標どおりの水準です。</p>
+  <p class="small muted">評定の目安：S 90点以上／A 80点以上／B 65点以上／C 50点以上／D それ未満。定性点が18点に届かない場合、業績が高くても昇進・役職登用は保留です。</p>
+  <div class="fld fld-area"><label for="f_mgr_final">上長コメント（総合）</label><div class="ro" id="f_mgr_final">利益率向上、売場改善の取組の成果は評価します。下期は売上の挽回を目指してください。</div></div>  </section>
+
+<section class="card">
+  <h2 class="sec">承認欄</h2>
+  <div class="stamps">
+          <div class="stamp on"><span>本人</span>
+        <b class="seal" aria-hidden="true">鈴木</b><small>鈴木 蓮</small><small>2026-09-28</small>
+                      </div>
+          <div class="stamp on"><span>上長</span>
+        <b class="seal" aria-hidden="true">佐藤</b><small>佐藤 陽菜</small><small>2026-10-05</small>
+                      </div>
+          <div class="stamp on"><span>営業本部長</span>
+        <b class="seal" aria-hidden="true">森</b><small>森 紗希</small><small>2026-10-06</small>
+                      </div>
+          <div class="stamp on"><span>人事</span>
+        <b class="seal" aria-hidden="true">山崎</b><small>山崎 陸</small><small>2026-10-07</small>
+                          <form method="post" action="#preview-off"><input type="hidden" name="csrf" value=""><input type="hidden" name="sheet_id" value="397"><input type="hidden" name="role" value="hr">
+            <input type="hidden" name="undo" value="1"><button class="btn ghost sm">取り消す</button></form>
+              </div>
+          <div class="stamp on"><span>社長</span>
+        <b class="seal" aria-hidden="true">佐藤</b><small>佐藤 陽菜</small><small>2026-10-08</small>
+                      </div>
+      </div>
+  <p class="small muted">本人・上長の欄は提出日、営業本部長・人事・社長の欄は期末確定後に押した承認の日付です。</p>
+</section>
 
 <section class="card submit-card">
-  <h2 class="sec">⑥ 提出</h2>
-  <p class="row wrap">現在の状況：<span class="badge done">人事提出済（期初確定）</span></p>
+  <h2 class="sec">提出</h2>
+  <p class="row wrap">現在の状況：<span class="badge done">人事提出済（期末確定）</span></p>
     <div class="submit-row">
     <button type="button" class="btn submit to-mgr" data-transition="submit_mgr" disabled      data-confirm="提出すると編集できません。よろしいですか？">▶ 上長へ提出<small>（本人用）</small></button>
     <button type="button" class="btn submit to-hr" data-transition="submit_hr" disabled      data-need-comment="mgr_goal.comment"
@@ -241,51 +273,55 @@
 </form>
 
 <form method="post" action="#preview-off" id="transition-form" hidden>
-  <input type="hidden" name="csrf" value=""><input type="hidden" name="sheet_id" value="290">
+  <input type="hidden" name="csrf" value=""><input type="hidden" name="sheet_id" value="397">
   <input type="hidden" name="version" value="3"><input type="hidden" name="action"><input type="hidden" name="reason">
 </form>
 
 
 <section class="card hr-only">
   <h2 class="h3">人事メモ<small>（本人・上長には表示されません）</small></h2>
-  <form method="post" action="#preview-off" class="stack"><input type="hidden" name="csrf" value="">    <input type="hidden" name="sheet_id" value="290">
+  <form method="post" action="#preview-off" class="stack"><input type="hidden" name="csrf" value="">    <input type="hidden" name="sheet_id" value="397">
     <textarea name="memo" rows="3" maxlength="1000" aria-label="人事メモ"></textarea>
     <button class="btn soft sm">メモを保存</button>
   </form>
-  <h2 class="h3">難易度の手動上書き</h2>
-  <form method="post" action="#preview-off" class="row wrap"><input type="hidden" name="csrf" value="">    <input type="hidden" name="sheet_id" value="290">
-    <select name="item" aria-label="対象">      <option value="g0">成長目標1：新規取引先への提案力を高める</option>      <option value="g1">成長目標2：見積りを早く正確に出せるようになる</option>      <option value="g2">成長目標3：後輩の育成に関われるようになる</option>      <option value="n0">数値目標1：担当エリアの月間売上</option>      <option value="n1">数値目標2：粗利率</option>      <option value="n2">数値目標3：納期遅延の件数</option></select>
-    <select name="value" aria-label="難易度"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="clear">自動判定に戻す</option></select>
+    <h2 class="h3">難易度の再判定（人事）</h2>
+  <form method="post" action="#preview-off" class="row wrap"><input type="hidden" name="csrf" value="">    <input type="hidden" name="sheet_id" value="397">
+    <select name="item" aria-label="対象"><option value="p0">プラン①：担当部門の月間売上1,200万円を目標とし、…</option><option value="p1">プラン②：廃棄ロス率を4.2%から3.6%へ下げる。毎朝1…</option><option value="p2">プラン③：新人スタッフ2名に接客と品出しを教え、9…</option><option value="p3">プラン④：担当棚12か所の売場づくりを毎週1か所ずつ…</option><option value="p4">プラン⑤：お客様アンケートの満足回答率を82%から88…</option></select>
+    <select name="value" aria-label="難易度"><option value="0">Lv0</option><option value="1">Lv1</option><option value="2">Lv2</option><option value="3">Lv3</option><option value="4">Lv4</option><option value="clear">上長・本人の値に戻す</option></select>
     <input name="note" maxlength="30" placeholder="理由（30字まで）" aria-label="理由">
-    <button class="btn soft sm">上書きする</button>
+    <button class="btn soft sm">再判定する</button>
   </form>
-</section>
+  </section>
 
 
 
 <section class="card">
   <h2 class="h3">提出の履歴（その時点の内容を保存しています）</h2>
   <ul class="list small">
-      <li><span>2026-10-13 18:00　人事へ提出 → 人事提出済（期初確定）</span>
+      <li><span>2026-10-05 17:00　人事へ提出 → 人事提出済（期末確定）</span>
       <a href="#preview-off" target="_blank" rel="noopener">この時点を見る</a></li>
-      <li><span>2026-10-08 09:30　上長へ提出 → 人事提出済（期初確定）</span>
+      <li><span>2026-09-28 11:00　上長へ提出 → 人事提出済（期末確定）</span>
+      <a href="#preview-off" target="_blank" rel="noopener">この時点を見る</a></li>
+      <li><span>2026-04-20 15:00　人事へ提出 → 人事提出済（期末確定）</span>
+      <a href="#preview-off" target="_blank" rel="noopener">この時点を見る</a></li>
+      <li><span>2026-04-14 10:00　上長へ提出 → 人事提出済（期末確定）</span>
       <a href="#preview-off" target="_blank" rel="noopener">この時点を見る</a></li>
     </ul>
 </section>
-</main>
-<dialog id="confirm" class="dlg">
-  <form method="dialog">
-    <p class="dlg-msg"></p>
-    <div class="dlg-reason" hidden>
-      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
-      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
-      <small class="count" data-count-for="dlg-reason-input"></small>
-    </div>
-    <div class="dlg-actions">
-      <button value="cancel" class="btn ghost">もどる</button>
-      <button value="ok" class="btn primary dlg-ok">提出する</button>
-    </div>
-  </form>
-</dialog>
-</body>
-</html>
+</main>
+<dialog id="confirm" class="dlg">
+  <form method="dialog">
+    <p class="dlg-msg"></p>
+    <div class="dlg-reason" hidden>
+      <label for="dlg-reason-input">差戻しの理由（本人が直すときの道しるべになります）</label>
+      <textarea id="dlg-reason-input" rows="4" maxlength="160"></textarea>
+      <small class="count" data-count-for="dlg-reason-input"></small>
+    </div>
+    <div class="dlg-actions">
+      <button value="cancel" class="btn ghost">もどる</button>
+      <button value="ok" class="btn primary dlg-ok">提出する</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>
