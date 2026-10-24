@@ -122,7 +122,7 @@
       var gw = $('[data-gap-warn="' + k + '"]'); if (gw) gw.hidden = !it.gap_note_needed;
       $$('[data-checks="' + k + '"], [data-checks-final="' + k + '"]').forEach(function (u) { u.innerHTML = tips(it.checks); });
       var adv = $('[data-advice="' + k + '"]');
-      if (adv) { adv.hidden = !it.advice; var p = adv.querySelector('p:last-child'); if (p) p.textContent = it.advice || ''; }
+      if (adv) { adv.hidden = !it.advice; var p = adv.querySelector('span'); if (p) p.textContent = it.advice || ''; }
     });
     Object.keys(ev.qual || {}).forEach(function (k) { setText('[data-qpoints="' + k + '"]', ev.qual[k].points); });
     var qc = $('[data-qual-checks]'); if (qc) qc.innerHTML = ev.qual_checks && ev.qual_checks.length ? tips(ev.qual_checks) : '';
@@ -264,8 +264,10 @@
       var body = text.value.trim();
       if (!body) { answers.innerHTML = '<div class="ans">困っていることを一言でも書くと、ヒントをお出しします。</div>'; return; }
       answers.innerHTML = '<div class="ans">ヒントを探しています…</div>';
+      var pick = $('[data-consult-item]', box);
+      var target = pick ? pick.value : item;
       flush().then(function () {
-        return post(sheet.dataset.consultUrl, { sheet_id: +sheet.dataset.sheetId, item: item, category: cat.value, body: body });
+        return post(sheet.dataset.consultUrl, { sheet_id: +sheet.dataset.sheetId, item: target, category: cat.value, body: body });
       }).then(function (j) {
         if (!j.ok) { answers.innerHTML = '<div class="ans">' + esc(j.message || 'もう一度お試しください。') + '</div>'; return; }
         consultId = j.id;
